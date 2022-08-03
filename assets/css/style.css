@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
+
+@font-face {
+  font-family: 'SkyFall Done Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SkyFall Done Regular'), url('../font/skyfall_done.woff') format('woff');
+}
+
+:root {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+}
+
+body {
+  /* font-family: 'Merriweather', serif; */
+  font-weight: 300;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: url(../images/barrel.png) no-repeat center / cover;
+}
+
+.outer-container {
+  min-width: 600px;
+  max-width: 800px;
+  position: fixed;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+#controls {
+ display: visible;
+}
+
+h1 {
+  font-family: 'SkyFall Done Regular';
+  font-size: 4rem;
+}
+
+.button {
+  background-color: #fff;
+  border: 2px solid #fff;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.button:hover {
+  border: 2px solid #000;
+  box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.6);
+  transition: transform 130ms;
+  transform: scale(1.01);
+}
+
+.button-start {
+  background-color: #fff;
+  font-family: 'SkyFall Done Regular';
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px;
+  margin: 0 auto;
+  width: auto;
+  border: 2px solid #000;
+}
+
+.button-start:hover {
+  background-color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  border: 2px solid #000;
+}
+
+.next-question {
+  background-color: #fff;
+  width: 30%;
+  margin: 50px auto 0;
+  font-size: 1em;
+  padding: 10px;
+  border: 2px solid #000;
+}
+
+#game {
+  width: 100%;
+}
+
+#question {
+  width: 100%;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 30px;
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.timer {
+  float: left;
+  margin-bottom: 50px;
+  color: #FFF;
+}
+
+.score {
+  float: right;
+  margin-bottom: 50px;
+  color: #FFF;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  height: 5%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #000;
+  height: 5%;
+}
