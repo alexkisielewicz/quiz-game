@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // get HTML elements to hide/show
 const controlsContainer = document.getElementById("controls");
 const gameContainer = document.getElementById("game");
-let question = document.getElementById("question");
+const question = document.getElementById("question");
 
 // get buttons
 let answer1 = document.getElementById("answer1");
@@ -18,7 +18,7 @@ let answer4 = document.getElementById("answer4");
 let nextButton = document.getElementById("next");
 nextButton.addEventListener("click", nextQuestion);
 
-let questionsCounter = 0;
+let questionCounter = 0;
 let score = 0;
 let questionsLeft = [];
 

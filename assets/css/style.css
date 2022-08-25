@@ -26,6 +26,14 @@ body {
   align-items: center;
 }
 
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -107,10 +115,9 @@ h1 {
 #question {
   width: 100%;
   color: white;
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bold;
   margin-bottom: 30px;
-  clear: both;
 }
 
 .hide {
@@ -120,6 +127,22 @@ h1 {
 .interface {
   display: flex;
   justify-content: space-between;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.interface-prefix {
+  font-family: 'Merriweather', serif;
+  font-size: 1.25rem;
+  margin: 0;
+  
+}
+
+.interface-main-text {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 
