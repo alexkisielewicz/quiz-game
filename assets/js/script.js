@@ -15,6 +15,15 @@ let answer2 = document.getElementById("answer2");
 let answer3 = document.getElementById("answer3");
 let answer4 = document.getElementById("answer4");
 
+let nextButton = document.getElementById("next");
+nextButton.addEventListener("click", nextQuestion);
+
+let questionsCounter = 0;
+let score = 0;
+let questionsLeft = [];
+
+
+
 // 20 quiz questions array
 const allQuestions = [
   {
@@ -198,27 +207,27 @@ const allQuestions = [
   }
 ] 
 
-function getRandomItem(arr) {
+function getRandomQuestion(arr) {
 
     // get random index value
     const randomIndex = Math.floor(Math.random() * arr.length);
 
     // get random item
-    const item = arr[randomIndex];
+    const randomQuestion = arr[randomIndex];
 
-    return item;
+    return randomQuestion;
 }
 
-let randomQuestion = getRandomItem(allQuestions);
+let randomQuestion = getRandomQuestion(allQuestions);
 
 
 function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
+  questionsCounter = 0;
+  score = 0;
   showQuestion();
 }
-
-let userAnswer;
 
 function showQuestion() {
   question.innerText = randomQuestion.question;
@@ -226,17 +235,31 @@ function showQuestion() {
   answer2.innerText = randomQuestion.option2;
   answer3.innerText = randomQuestion.option3;
   answer4.innerText = randomQuestion.option4;
+  removeQuestion();
 } 
 
+function removeQuestion() {
+console.log("Current question has been removed from array"); 
+questionsLeft = 0;
+}
+
 function nextQuestion() {
-  // remove question from allQuestion 
+  console.log("next question");
+  questionCounter++; 
+  
+  
 }
 
 function selectAnswer() {
 
 }
 
-function checkAnswer() {
+function showNextQuestion() {
+
+}
+
+
+function checkUserAnswer() {
   // check user answer
   // compare user answer with array randomQuestion.answer
 }

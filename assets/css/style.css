@@ -11,8 +11,12 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  /* font-family: 'Merriweather', serif; */
+  font-family: 'Merriweather', serif; 
   font-weight: 300;
   margin: 0;
   width: 100vw;
@@ -115,24 +119,32 @@ h1 {
 .timer {
   float: left;
   margin-bottom: 50px;
+  width: 10%;
   color: #FFF;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .score {
   float: right;
   margin-bottom: 50px;
+  width: 10%;
   color: #FFF;
+  border: 1px solid #FFF;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 
-header {
+/* header {
   position: fixed;
   top: 0;
   width: 100%;
   text-align: center;
   background-color: #000;
   height: 5%;
-}
+} */
 
 footer {
   position: fixed;
@@ -140,5 +152,13 @@ footer {
   width: 100%;
   text-align: center;
   background-color: #000;
-  height: 5%;
+  height: 50px;
+  color: #FFF;
+}
+
+.social-icons {
+  color:#FFF;
+  font-size: 2em;
+  padding: 10px;
+  margin-bottom: 10px;
 }
