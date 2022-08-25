@@ -55,6 +55,7 @@ h1 {
 }
 
 .button {
+  cursor: pointer;
   background-color: #fff;
   border: 2px solid #fff;
   font-family: inherit;
