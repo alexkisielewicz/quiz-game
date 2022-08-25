@@ -4,22 +4,22 @@ document.addEventListener("DOMContentLoaded", function() {
   startButton.addEventListener("click", startGame);
 }); 
 
-// get HTML elements to hide/show
+// get HTML elements to hide/show when game starts
 const controlsContainer = document.getElementById("controls");
 const gameContainer = document.getElementById("game");
 const question = document.getElementById("question");
 
-// get buttons
-let answer1 = document.getElementById("answer1");
-let answer2 = document.getElementById("answer2");
-let answer3 = document.getElementById("answer3");
-let answer4 = document.getElementById("answer4");
+const choices = Array.from(document.getElementsByClassName("choice"));
 
-let nextButton = document.getElementById("next");
+console.log(choices);
+
+const nextButton = document.getElementById("next");
 nextButton.addEventListener("click", nextQuestion);
 
-let questionCounter = 0;
-let score = 0;
+let questionCounter = document.getElementById("questionCounter");
+let score = document.getElementById("score");
+
+
 let questionsLeft = [];
 
 
@@ -30,7 +30,7 @@ const allQuestions = [
     question: "What is James Bond's Secret Service Agent code name?", 
     option1: "006", 
     option2: "007", 
-    option3: "010",
+    option3: "009",
     option4: "777",
     answer: 2,
   },
@@ -59,7 +59,7 @@ const allQuestions = [
     option2: "Sean Connery", 
     option3: "Timoty Dalton",
     option4: "Roger Moore",
-    answer: 1,
+    answer: 2,
   },
 
   {
@@ -77,11 +77,11 @@ const allQuestions = [
     option2: "On the rocks", 
     option3: "Shaken, not stirred",
     option4: "With a twist",
-    answer: 1,
+    answer: 3,
   },
 
   {
-    question: "Which of Bond’s many enemies notably owned a white cat?", 
+    question: "Which of Bond's many enemies notably owned a white cat?", 
     option1: "Ernst Stavro Blofeld", 
     option2: "Auric Goldfinger", 
     option3: "Le Chiffre",
@@ -95,43 +95,43 @@ const allQuestions = [
     option2: "Adele", 
     option3: "Billie Eilish",
     option4: "Alicia Keys",
-    answer: 1,
+    answer: 3,
   },
 
   {
     question: "How many films has Daniel Craig played Bond in to date?", 
-    option1: "4", 
-    option2: "5", 
-    option3: "6",
-    option4: "7",
-    answer: 1,
+    option1: "3", 
+    option2: "4", 
+    option3: "5",
+    option4: "6",
+    answer: 3,
   },
 
   {
-    question: "Which of the following actresses has NOT appeared as a ‘Bond Girl’?", 
+    question: "Which of the following actresses has NOT appeared as a 'Bond Girl'?", 
     option1: "Halle Berry", 
     option2: "Charlize Theron", 
     option3: "Rosamund Pike",
     option4: "Michelle Yeoh",
-    answer: 1,
+    answer: 2,
   },
 
   {
     question: "In which country was Bond actor Pierce Brosnan born?", 
     option1: "Northern Ireland", 
-    option2: "Ireland", 
+    option2: "Republic of Ireland", 
     option3: "Scotland",
-    option4: "USA",
-    answer: 1,
+    option4: "United States of America",
+    answer: 2,
   },
 
   {
-    question: "What was Daniel Craig’s first Bond film?", 
+    question: "What was Daniel Craig's first Bond film?", 
     option1: "Skyfall", 
     option2: "Quantum of Solace", 
     option3: "Casino Royale",
     option4: "Spectre",
-    answer: 1,
+    answer: 3,
   },
 
   {
@@ -140,7 +140,7 @@ const allQuestions = [
     option2: "MI 6", 
     option3: "SAS",
     option4: "Ministry of Defence",
-    answer: 1,
+    answer: 2,
   },
 
   {
@@ -149,60 +149,60 @@ const allQuestions = [
     option2: "Duran Duran's 'A View to a Kill'", 
     option3: "Paul Mc Cartney's 'Live and Let Die'",
     option4: "Adele's 'Skyfall'",
+    answer: 2,
+  },
+
+  {
+    question: "Wich Bond film has won the most Academy Awards?", 
+    option1: "Skyfall", 
+    option2: "Casino Royale", 
+    option3: "No Time to Die",
+    option4: "Quantuum of Solace",
     answer: 1,
   },
 
   {
-    question: "What was the first Bond film released in cinema?", 
-    option1: "Dr No", 
-    option2: "Goldfinger", 
-    option3: "Moonraker",
-    option4: "Thunderball",
-    answer: 1,
+    question: "Who is the onlly Bond actor to drop to one knee during their opening gun-barrel sequence?", 
+    option1: "Roger Moore", 
+    option2: "Timothy Dalton ", 
+    option3: "Sean Connery",
+    option4: "George Lazenby",
+    answer: 4,
   },
 
   {
-    question: "What was the first Bond film released in cinema?", 
-    option1: "Dr No", 
-    option2: "Goldfinger", 
-    option3: "Moonraker",
-    option4: "Thunderball",
-    answer: 1,
+    question: "How many actors have played M in the official James Bond film series?", 
+    option1: "2", 
+    option2: "3", 
+    option3: "4",
+    option4: "5",
+    answer: 3,
   },
 
   {
-    question: "What was the first Bond film released in cinema?", 
-    option1: "Dr No", 
-    option2: "Goldfinger", 
-    option3: "Moonraker",
-    option4: "Thunderball",
-    answer: 1,
+    question: "Which 00 agent is murdered early on Octopuss (1983)?", 
+    option1: "002", 
+    option2: "004", 
+    option3: "008",
+    option4: "009",
+    answer: 4,
   },
 
   {
-    question: "What was the first Bond film released in cinema?", 
-    option1: "Dr No", 
-    option2: "Goldfinger", 
-    option3: "Moonraker",
-    option4: "Thunderball",
-    answer: 1,
+    question: "What type of pistol has Bond is most associated with?", 
+    option1: ".357 Magnum", 
+    option2: "Walther PPK", 
+    option3: "Colt 1911",
+    option4: "FN Five-Seven",
+    answer: 2,
   },
 
   {
-    question: "What was the first Bond film released in cinema?", 
-    option1: "Dr No", 
-    option2: "Goldfinger", 
-    option3: "Moonraker",
-    option4: "Thunderball",
-    answer: 1,
-  },
-
-  {
-    question: "What was the first Bond film released in cinema?", 
-    option1: "Dr No", 
-    option2: "Goldfinger", 
-    option3: "Moonraker",
-    option4: "Thunderball",
+    question: "In which 2002 Bond film would you find Halle Berry as Bond Firl Jinx?", 
+    option1: "Die Another Day", 
+    option2: "The Living Daylights", 
+    option3: "Romorrow Never Dies",
+    option4: "The World in Not Enough",
     answer: 1,
   }
 ] 
