@@ -9,6 +9,15 @@ const controlsContainer = document.getElementById("controls");
 const gameContainer = document.getElementById("game");
 const question = document.getElementById("question");
 
+let currentQuestion = {};
+let acceptingAnswers = true;
+let questionCounter = document.getElementById("questionCounter");
+questionCounter = 0;
+let score = document.getElementById("score");
+
+const CORRECT_POINT = 1;
+const MAX_QUESTIONS = 10;
+
 const choices = Array.from(document.getElementsByClassName("choice"));
 
 console.log(choices);
@@ -16,11 +25,10 @@ console.log(choices);
 const nextButton = document.getElementById("next");
 nextButton.addEventListener("click", nextQuestion);
 
-let questionCounter = document.getElementById("questionCounter");
-let score = document.getElementById("score");
-
-
-let questionsLeft = [];
+let answer1 = document.querySelector('[data-answer="1"]');
+let answer2 = document.querySelector('[data-answer="2"]');
+let answer3 = document.querySelector('[data-answer="3"]');
+let answer4 = document.querySelector('[data-answer="4"]');
 
 
 
@@ -32,7 +40,7 @@ const allQuestions = [
     option2: "007", 
     option3: "009",
     option4: "777",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -41,7 +49,7 @@ const allQuestions = [
     option2: "Bentley", 
     option3: "Aston Martin",
     option4: "Rolls-Royce",
-    answer: 3,
+    answer: 3
   },
 
   {
@@ -50,7 +58,7 @@ const allQuestions = [
     option2: "Goldfinger", 
     option3: "Moonraker",
     option4: "Thunderball",
-    answer: 1,
+    answer: 1
   },
   
   {
@@ -59,7 +67,7 @@ const allQuestions = [
     option2: "Sean Connery", 
     option3: "Timoty Dalton",
     option4: "Roger Moore",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -68,7 +76,7 @@ const allQuestions = [
     option2: "Henry Porter", 
     option3: "John Altman",
     option4: "John le Carre",
-    answer: 1,
+    answer: 1
   },
 
   {
@@ -77,7 +85,7 @@ const allQuestions = [
     option2: "On the rocks", 
     option3: "Shaken, not stirred",
     option4: "With a twist",
-    answer: 3,
+    answer: 3
   },
 
   {
@@ -86,7 +94,7 @@ const allQuestions = [
     option2: "Auric Goldfinger", 
     option3: "Le Chiffre",
     option4: "Jaws",
-    answer: 1,
+    answer: 1
   },
 
   {
@@ -95,7 +103,7 @@ const allQuestions = [
     option2: "Adele", 
     option3: "Billie Eilish",
     option4: "Alicia Keys",
-    answer: 3,
+    answer: 3
   },
 
   {
@@ -104,7 +112,7 @@ const allQuestions = [
     option2: "4", 
     option3: "5",
     option4: "6",
-    answer: 3,
+    answer: 3
   },
 
   {
@@ -113,7 +121,7 @@ const allQuestions = [
     option2: "Charlize Theron", 
     option3: "Rosamund Pike",
     option4: "Michelle Yeoh",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -122,7 +130,7 @@ const allQuestions = [
     option2: "Republic of Ireland", 
     option3: "Scotland",
     option4: "United States of America",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -131,7 +139,7 @@ const allQuestions = [
     option2: "Quantum of Solace", 
     option3: "Casino Royale",
     option4: "Spectre",
-    answer: 3,
+    answer: 3
   },
 
   {
@@ -140,7 +148,7 @@ const allQuestions = [
     option2: "MI 6", 
     option3: "SAS",
     option4: "Ministry of Defence",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -149,7 +157,7 @@ const allQuestions = [
     option2: "Duran Duran's 'A View to a Kill'", 
     option3: "Paul Mc Cartney's 'Live and Let Die'",
     option4: "Adele's 'Skyfall'",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -158,7 +166,7 @@ const allQuestions = [
     option2: "Casino Royale", 
     option3: "No Time to Die",
     option4: "Quantuum of Solace",
-    answer: 1,
+    answer: 1
   },
 
   {
@@ -167,7 +175,7 @@ const allQuestions = [
     option2: "Timothy Dalton ", 
     option3: "Sean Connery",
     option4: "George Lazenby",
-    answer: 4,
+    answer: 4
   },
 
   {
@@ -176,16 +184,16 @@ const allQuestions = [
     option2: "3", 
     option3: "4",
     option4: "5",
-    answer: 3,
+    answer: 3
   },
 
   {
-    question: "Which 00 agent is murdered early on Octopuss (1983)?", 
+    question: "Which 00 agent is murdered early on Octopussy (1983)?", 
     option1: "002", 
     option2: "004", 
     option3: "008",
     option4: "009",
-    answer: 4,
+    answer: 4
   },
 
   {
@@ -194,7 +202,7 @@ const allQuestions = [
     option2: "Walther PPK", 
     option3: "Colt 1911",
     option4: "FN Five-Seven",
-    answer: 2,
+    answer: 2
   },
 
   {
@@ -203,7 +211,7 @@ const allQuestions = [
     option2: "The Living Daylights", 
     option3: "Romorrow Never Dies",
     option4: "The World in Not Enough",
-    answer: 1,
+    answer: 1
   }
 ] 
 
@@ -218,7 +226,9 @@ function getRandomQuestion(arr) {
     return randomQuestion;
 }
 
-let randomQuestion = getRandomQuestion(allQuestions);
+let availableQuestions = [... allQuestions];
+
+let randomQuestion = getRandomQuestion(availableQuestions);
 
 
 function startGame() {
@@ -226,6 +236,8 @@ function startGame() {
   gameContainer.classList.remove("hide");
   questionsCounter = 0;
   score = 0;
+  availableQuestions = [... allQuestions];
+  console.log(availableQuestions);
   showQuestion();
 }
 
@@ -235,13 +247,10 @@ function showQuestion() {
   answer2.innerText = randomQuestion.option2;
   answer3.innerText = randomQuestion.option3;
   answer4.innerText = randomQuestion.option4;
-  removeQuestion();
+  questionCounter++;
+  console.log(questionCounter);
 } 
 
-function removeQuestion() {
-console.log("Current question has been removed from array"); 
-questionsLeft = 0;
-}
 
 function nextQuestion() {
   console.log("next question");
