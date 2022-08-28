@@ -22,8 +22,7 @@ const choices = Array.from(document.getElementsByClassName("choice"));
 
 console.log(choices);
 
-const nextButton = document.getElementById("next");
-nextButton.addEventListener("click", nextQuestion);
+
 
 
 let answer1 = document.querySelector('[data-answer="1"]');
@@ -243,11 +242,6 @@ function startGame() {
 }
 
 function showQuestion() {
-  // question.innerText = randomQuestion.question;
-  // answer1.innerText = randomQuestion.option1;
-  // answer2.innerText = randomQuestion.option2;
-  // answer3.innerText = randomQuestion.option3;
-  // answer4.innerText = randomQuestion.option4;
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
@@ -270,9 +264,13 @@ choices.forEach(choice => {
     const userChoice = event.target;
     const userAnswer = userChoice.dataset["answer"];
 
-    (availableQuestions.length < 10) ? (acceptingAnswers = true) : (acceptingAnswers = false);
+    if (availableQuestions.length > 10) {
+      acceptingAnswers = true;
+    } else {
+        return window.location.href("score.html");
+    }
   
     (acceptingAnswers = true) ? (showQuestion()) : (alert("Game Over")); 
     console.log(acceptingAnswers);
   })
-})
+});
