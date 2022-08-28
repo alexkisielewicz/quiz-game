@@ -99,15 +99,6 @@ h1 {
   border: 2px solid #000;
 }
 
-.next-question {
-  background-color: #fff;
-  width: 30%;
-  margin: 50px auto 0;
-  font-size: 1em;
-  padding: 10px;
-  border: 2px solid #000;
-}
-
 #game {
   width: 100%;
 }
