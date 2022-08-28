@@ -269,26 +269,10 @@ choices.forEach(choice => {
     
     const userChoice = event.target;
     const userAnswer = userChoice.dataset["answer"];
-    console.log(userAnswer);
-    showQuestion();
+
+    (availableQuestions.length < 10) ? (acceptingAnswers = true) : (acceptingAnswers = false);
+  
+    (acceptingAnswers = true) ? (showQuestion()) : (alert("Game Over")); 
+    console.log(acceptingAnswers);
   })
 })
-
-
-function nextQuestion() {
-  
-}
-
-function selectAnswer() {
-
-}
-
-function showNextQuestion() {
-
-}
-
-
-function checkUserAnswer() {
-  // check user answer
-  // compare user answer with array randomQuestion.answer
-}
