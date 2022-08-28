@@ -11,13 +11,21 @@ const question = document.getElementById("question");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
+
+let music = new Audio("bondtheme.mp3");
+let pause = document.getElementById("pause");
+
+// Question counter
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0;
 let score = document.getElementById("score");
+
+// Progress bar
 let progress = document.getElementById("progress");
 let width = 0;
 
 const CORRECT_POINT = 1;
+
 
 
 const choices = Array.from(document.getElementsByClassName("choice"));
@@ -215,6 +223,9 @@ const allQuestions = [
 function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
+
+  // music.play();
+
   score = 0;
   availableQuestions = [... allQuestions];
   console.log(availableQuestions);
@@ -260,3 +271,6 @@ choices.forEach(choice => {
     
   })
 });
+
+
+// mp3 source https://archive.org/details/tvtunes_6995  
