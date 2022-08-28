@@ -25,6 +25,7 @@ console.log(choices);
 const nextButton = document.getElementById("next");
 nextButton.addEventListener("click", nextQuestion);
 
+
 let answer1 = document.querySelector('[data-answer="1"]');
 let answer2 = document.querySelector('[data-answer="2"]');
 let answer3 = document.querySelector('[data-answer="3"]');
@@ -249,6 +250,7 @@ function showQuestion() {
   answer4.innerText = randomQuestion.option4;
   questionCounter++;
   console.log(questionCounter);
+  availableQuestions.splice(randomQuestion);
 } 
 
 
