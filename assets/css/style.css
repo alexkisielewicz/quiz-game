@@ -148,7 +148,8 @@ h1 {
 }
 
 .progress-bar-inner {
-  width: 40%;
+  width: 10%;
+  height: 30px;
   background-color: rgb(0, 196, 0);
   border-radius: 1rem;
 }

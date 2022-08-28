@@ -14,16 +14,13 @@ let acceptingAnswers = false;
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0;
 let score = document.getElementById("score");
+let progress = document.getElementById("progress");
+let width = 0;
 
 const CORRECT_POINT = 1;
-const MAX_QUESTIONS = 10;
+
 
 const choices = Array.from(document.getElementsByClassName("choice"));
-
-console.log(choices);
-
-
-
 
 let answer1 = document.querySelector('[data-answer="1"]');
 let answer2 = document.querySelector('[data-answer="2"]');
@@ -215,26 +212,9 @@ const allQuestions = [
   }
 ] 
 
-// function getRandomQuestion(arr) {
-
-//     // get random index value
-//     const randomIndex = Math.floor(Math.random() * arr.length);
-
-//     // get random item
-//     const randomQuestion = arr[randomIndex];
-    
-//     return randomQuestion;
-// }
-
-// let availableQuestions = [... allQuestions];
-
-// let randomQuestion = getRandomQuestion(availableQuestions);
-
-
 function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
-  questionsCounter = 0;
   score = 0;
   availableQuestions = [... allQuestions];
   console.log(availableQuestions);
@@ -243,6 +223,9 @@ function startGame() {
 
 function showQuestion() {
   questionCounter++;
+  width = (width + 10);
+  progress.style.width = width + "%";
+  counter.innerText = `${questionCounter}/10`;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
@@ -254,6 +237,8 @@ function showQuestion() {
 
  availableQuestions.splice(questionIndex, 1);
  console.log(availableQuestions);
+ console.log(width);
+ console.log(progress);
 
   acceptingAnswers = true; 
 };
@@ -267,10 +252,11 @@ choices.forEach(choice => {
     if (availableQuestions.length > 10) {
       acceptingAnswers = true;
     } else {
-        return window.location.href("score.html");
+        return window.location.href = "score.html";
     }
-  
-    (acceptingAnswers = true) ? (showQuestion()) : (alert("Game Over")); 
+    showQuestion();
     console.log(acceptingAnswers);
+    console.log(questionCounter);
+    
   })
 });
