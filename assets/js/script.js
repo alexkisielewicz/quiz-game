@@ -10,7 +10,7 @@ const gameContainer = document.getElementById("game");
 const question = document.getElementById("question");
 
 let currentQuestion = {};
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0;
 let score = document.getElementById("score");
@@ -216,20 +216,20 @@ const allQuestions = [
   }
 ] 
 
-function getRandomQuestion(arr) {
+// function getRandomQuestion(arr) {
 
-    // get random index value
-    const randomIndex = Math.floor(Math.random() * arr.length);
+//     // get random index value
+//     const randomIndex = Math.floor(Math.random() * arr.length);
 
-    // get random item
-    const randomQuestion = arr[randomIndex];
+//     // get random item
+//     const randomQuestion = arr[randomIndex];
+    
+//     return randomQuestion;
+// }
 
-    return randomQuestion;
-}
+// let availableQuestions = [... allQuestions];
 
-let availableQuestions = [... allQuestions];
-
-let randomQuestion = getRandomQuestion(availableQuestions);
+// let randomQuestion = getRandomQuestion(availableQuestions);
 
 
 function startGame() {
@@ -239,25 +239,39 @@ function startGame() {
   score = 0;
   availableQuestions = [... allQuestions];
   console.log(availableQuestions);
-  showQuestion();
+  showQuestion()
 }
 
 function showQuestion() {
-  question.innerText = randomQuestion.question;
-  answer1.innerText = randomQuestion.option1;
-  answer2.innerText = randomQuestion.option2;
-  answer3.innerText = randomQuestion.option3;
-  answer4.innerText = randomQuestion.option4;
+  // question.innerText = randomQuestion.question;
+  // answer1.innerText = randomQuestion.option1;
+  // answer2.innerText = randomQuestion.option2;
+  // answer3.innerText = randomQuestion.option3;
+  // answer4.innerText = randomQuestion.option4;
   questionCounter++;
-  console.log(questionCounter);
-  availableQuestions.splice(randomQuestion);
-} 
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  currentQuestion = availableQuestions[questionIndex];
+  question.innerText = currentQuestion.question;
+  
+ choices.forEach(choice => {
+  const optionIndex = choice.dataset["answer"];
+  choice.innerText = currentQuestion["option" + optionIndex];
+ })
+
+ availableQuestions.splice(questionIndex, 1);
+ console.log(availableQuestions);
+
+  acceptingAnswers = true; 
+};
+
+choices.forEach(choice => {
+  choice.addEventListener("click", e => {
+    console.log(e.target);
+  })
+})
 
 
 function nextQuestion() {
-  console.log("next question");
-  questionCounter++; 
-  
   
 }
 
