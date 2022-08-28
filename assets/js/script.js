@@ -266,9 +266,11 @@ function showQuestion() {
 
 choices.forEach(choice => {
   choice.addEventListener("click", event => {
+    
     const userChoice = event.target;
     const userAnswer = userChoice.dataset["answer"];
     console.log(userAnswer);
+    showQuestion();
   })
 })
 
