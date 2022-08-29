@@ -24,7 +24,7 @@ let score = document.getElementById("score");
 let progress = document.getElementById("progress");
 let width = 0;
 
-const CORRECT_POINT = 1;
+const ADD_POINT = 0;
 
 
 
@@ -175,7 +175,7 @@ const allQuestions = [
   },
 
   {
-    question: "Who is the onlly Bond actor to drop to one knee during their opening gun-barrel sequence?", 
+    question: "Who is the only Bond actor to drop to one knee during their opening gun-barrel sequence?", 
     option1: "Roger Moore", 
     option2: "Timothy Dalton ", 
     option3: "Sean Connery",
@@ -221,6 +221,7 @@ const allQuestions = [
 ] 
 
 function startGame() {
+
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
 
@@ -246,28 +247,35 @@ function showQuestion() {
   choice.innerText = currentQuestion["option" + optionIndex];
  })
 
- availableQuestions.splice(questionIndex, 1);
- console.log(availableQuestions);
- console.log(width);
- console.log(progress);
-
+  availableQuestions.splice(questionIndex, 1);
   acceptingAnswers = true; 
 };
 
 choices.forEach(choice => {
   choice.addEventListener("click", event => {
     
-    const userChoice = event.target;
-    const userAnswer = userChoice.dataset["answer"];
-
     if (availableQuestions.length > 10) {
       acceptingAnswers = true;
     } else {
         return window.location.href = "score.html";
     }
-    showQuestion();
+
+    const userChoice = event.target;
+    const userAnswer = userChoice.dataset["answer"];
+
+    console.log(userAnswer);
+    console.log(currentQuestion["answer"]);
+    
+    if (userAnswer == currentQuestion["answer"]) {
+      score++;
+      showQuestion();
+    } else {
+      showQuestion();
+    };
+
     console.log(acceptingAnswers);
     console.log(questionCounter);
+    console.log("Score is " +  score);
     
   })
 });
