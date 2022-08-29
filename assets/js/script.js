@@ -12,8 +12,8 @@ const question = document.getElementById("question");
 let currentQuestion = {};
 let acceptingAnswers = false;
 
-let music = new Audio("bondtheme.mp3");
-let pause = document.getElementById("pause");
+let music = new Audio("assets/audio/bondtheme.mp3");
+// audio pause option to be added
 
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
@@ -243,7 +243,7 @@ function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
 
-  // music.play();
+  music.play();
   availableQuestions = [... allQuestions];
   userScore = 0;
   showQuestion()
@@ -304,7 +304,6 @@ choices.forEach(choice => {
     console.log(userScore);
   })
 });
-
 
 
 
