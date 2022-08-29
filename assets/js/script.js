@@ -233,9 +233,15 @@ function startGame() {
 
 function showQuestion() {
   questionCounter++;
+  
+  // update progress bar display
   width += 10;
   progress.style.width = width + "%";
+ 
+ // update score display
   counter.innerText = `${questionCounter}/10`;
+
+  // get random question from all questions
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
@@ -243,17 +249,18 @@ function showQuestion() {
  choices.forEach(choice => {
   const optionIndex = choice.dataset["answer"];
   choice.innerText = currentQuestion["option" + optionIndex];
- })
+ });
 
+ // remove shown question from available questions array
   availableQuestions.splice(questionIndex, 1);
-  acceptingAnswers = true; 
+  allowUserAnswer = true; 
 };
 
 choices.forEach(choice => {
   choice.addEventListener("click", event => {
     
     if (availableQuestions.length > 10) {
-      acceptingAnswers = true;
+      allowUserAnswer = true;
     } else {
         return window.location.href = "score.html";
     }
