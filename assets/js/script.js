@@ -18,15 +18,15 @@ let pause = document.getElementById("pause");
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0;
-let score = document.getElementById("score");
+
+
+// Score
+let userScore = document.getElementById("score");
+
 
 // Progress bar
 let progress = document.getElementById("progress");
 let width = 0;
-
-const ADD_POINT = 0;
-
-
 
 const choices = Array.from(document.getElementsByClassName("choice"));
 
@@ -211,7 +211,7 @@ const allQuestions = [
   },
 
   {
-    question: "In which 2002 Bond film would you find Halle Berry as Bond Firl Jinx?", 
+    question: "In which 2002 Bond film would you find Halle Berry as Bond girl Jinx?", 
     option1: "Die Another Day", 
     option2: "The Living Daylights", 
     option3: "Romorrow Never Dies",
@@ -226,16 +226,14 @@ function startGame() {
   gameContainer.classList.remove("hide");
 
   // music.play();
-
-  score = 0;
   availableQuestions = [... allQuestions];
-  console.log(availableQuestions);
+  userScore = 0;
   showQuestion()
 }
 
 function showQuestion() {
   questionCounter++;
-  width = (width + 10);
+  width += 10;
   progress.style.width = width + "%";
   counter.innerText = `${questionCounter}/10`;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -262,22 +260,18 @@ choices.forEach(choice => {
 
     const userChoice = event.target;
     const userAnswer = userChoice.dataset["answer"];
-
-    console.log(userAnswer);
-    console.log(currentQuestion["answer"]);
     
     if (userAnswer == currentQuestion["answer"]) {
-      score++;
+      userScore++;
+      score.innerText = `${userScore} pts.`;
       showQuestion();
     } else {
       showQuestion();
     };
 
-    console.log(acceptingAnswers);
-    console.log(questionCounter);
-    console.log("Score is " +  score);
-    
+    console.log("Score is " + userScore);
   })
+  
 });
 
 
