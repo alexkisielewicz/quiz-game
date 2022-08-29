@@ -19,10 +19,8 @@ let pause = document.getElementById("pause");
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0;
 
-
 // Score
 let userScore = document.getElementById("score");
-
 
 // Progress bar
 let progress = document.getElementById("progress");
@@ -35,7 +33,25 @@ let answer2 = document.querySelector('[data-answer="2"]');
 let answer3 = document.querySelector('[data-answer="3"]');
 let answer4 = document.querySelector('[data-answer="4"]');
 
+function correctAnswer() { 
+setTimeout( () => {
+document.body.style.backgroundColor = "green";        
+}, 100); 
 
+setTimeout( () => {
+document.body.style.backgroundColor = "inherit";        
+}, 800); 
+}
+
+function incorrectAnswer() { 
+setTimeout( () => {
+document.body.style.backgroundColor = "red";        
+}, 100); 
+
+setTimeout( () => {
+document.body.style.backgroundColor = "inherit";        
+}, 800); 
+}
 
 // 20 quiz questions array
 const allQuestions = [
@@ -214,14 +230,16 @@ const allQuestions = [
     question: "In which 2002 Bond film would you find Halle Berry as Bond girl Jinx?", 
     option1: "Die Another Day", 
     option2: "The Living Daylights", 
-    option3: "Romorrow Never Dies",
+    option3: "Tomorrow Never Dies",
     option4: "The World in Not Enough",
     answer: 1
   }
 ] 
 
-function startGame() {
+let background = document.getElementsByTagName("body");
 
+
+function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
 
@@ -253,8 +271,9 @@ function showQuestion() {
 
  // remove shown question from available questions array
   availableQuestions.splice(questionIndex, 1);
-  allowUserAnswer = true; 
+  allowUserAnswer = true;
 };
+
 
 choices.forEach(choice => {
   choice.addEventListener("click", event => {
@@ -262,7 +281,9 @@ choices.forEach(choice => {
     if (availableQuestions.length > 10) {
       allowUserAnswer = true;
     } else {
-        return window.location.href = "score.html";
+        alert("Your score is " + userScore);
+        return;
+        // return window.location.href = "score.html";
     }
 
     const userChoice = event.target;
@@ -271,15 +292,23 @@ choices.forEach(choice => {
     if (userAnswer == currentQuestion["answer"]) {
       userScore++;
       score.innerText = `${userScore} pts.`;
+
+      // feedback when answer is correct
+      correctAnswer();
       showQuestion();
     } else {
+      // feedback when answer is incorrect
+      incorrectAnswer();
       showQuestion();
     };
-
-    console.log("Score is " + userScore);
+    console.log(userScore);
   })
-  
 });
 
 
+
+
 // mp3 source https://archive.org/details/tvtunes_6995  
+
+
+
