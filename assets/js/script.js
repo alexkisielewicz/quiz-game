@@ -38,21 +38,27 @@ let answer4 = document.querySelector('[data-answer="4"]');
 
 function correctAnswer() { 
 setTimeout( () => {
-document.body.style.backgroundColor = "#007B00";        
+// document.body.style.backgroundColor = "#007B00";
+// document.body.style.backgroundImage = "url('assets/images/bond.png')";
+document.body.style.background = "#007B00 url('assets/images/bond.png') no-repeat center";     
 }, 100); 
 
 setTimeout( () => {
-document.body.style.backgroundColor = "inherit";        
+document.body.style.backgroundColor = "inherit";
+document.body.style.backgroundImage = "";        
 }, 800); 
 };
 
 function incorrectAnswer() { 
 setTimeout( () => {
-document.body.style.backgroundColor = "#7B0000";        
+// document.body.style.backgroundColor = "#FFF";
+// document.body.style.backgroundImage = "url('assets/images/blood.png')";
+document.body.style.background = "#FF0000 url('assets/images/blood.png') repeat";     
 }, 100); 
 
 setTimeout( () => {
-document.body.style.backgroundColor = "inherit";        
+document.body.style.backgroundColor = "inherit";     
+document.body.style.backgroundImage = "";     
 }, 800); 
 }; 
 
@@ -149,6 +155,7 @@ sessionStorage.setItem("gameresult", gameResult);
 // - no delay to see if last question was answered correctly 
 
 // mp3 source https://archive.org/details/tvtunes_6995  
+// bg png https://www.stickpng.com/ 
 
 
 
