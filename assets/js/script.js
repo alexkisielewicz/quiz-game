@@ -29,6 +29,21 @@ let width = 0;
 // Background
 let background = document.getElementsByTagName("body");
 
+// Mute audio
+let pauseButton = document.getElementById("audioControl");
+
+pauseButton.addEventListener("click", function(){
+  if(music.paused){
+    music.play();
+    pauseButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
+  } else {
+    music.pause();
+    pauseButton.innerHTML = ` <i class="fa-solid fa-play"></i>`;
+  }
+});
+
+
+
 // Choices 
 const choices = Array.from(document.getElementsByClassName("choice"));
 let answer1 = document.querySelector('[data-answer="1"]');
@@ -155,10 +170,7 @@ sessionStorage.setItem("gameresult", gameResult);
 // Issues:
 // - choices deselect - doesn't work
 // - max possible score is 9 instead of 10
-// - no delay to see if last question was answered correctly 
+// - no delay to see if the last question was answered correctly 
 
 // mp3 source https://archive.org/details/tvtunes_6995  
 // bg png https://www.stickpng.com/ 
-
-
-
