@@ -116,11 +116,15 @@ choices.forEach(choice => {
 
       // feedback when answer is correct
       correctAnswer();
-      showQuestion();
+      setTimeout(() => {
+        showQuestion();
+      }, 1000);
     } else {
       // feedback when answer is incorrect
       incorrectAnswer();
-      showQuestion();
+      setTimeout(() => {
+        showQuestion();
+      }, 1000);
     };
 
     console.log(userScore);
