@@ -11,8 +11,8 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(120, 125, 131, 0.6));
 }
 
-* {
-  box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
@@ -71,14 +71,13 @@ h1 {
 .button:hover {
   color: #FFF;
   background-color: #A88D64;
-  border: 2px solid #787D83;
   box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
-  transition: transform 130ms;
+  transition: transform 100ms;
   transform: scale(1.01);
 }
 
 .button-start {
-  background-color: #fff;
+  background-color: #FFF;
   font-family: 'SkyFall Done Regular';
   font-size: 2em;
   font-weight: bold;
@@ -104,7 +103,9 @@ h1 {
   width: 100%;
   font-size: xx-large;
   font-weight: bold;
-  background-color: #FFD700;
+  color: #FFF;
+  background-color: #A88D64;
+  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   margin-bottom: 30px;
   padding: 10px;
@@ -139,9 +140,9 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  background-color: inherit;
+  background-color: #787D83;
   box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.3);
-  border: 1px solid #fff;
+  border: 1px solid #FFF;
   border-radius: 1rem;
   margin-bottom: 1rem;
 }
