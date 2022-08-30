@@ -252,8 +252,12 @@ function startGame() {
 function showQuestion() {
   questionCounter++;
   
+  // deselect all choices 
+  choices.forEach(choice => {
   choices.selected = false;
   console.log(choices.selected);
+ });
+  
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
