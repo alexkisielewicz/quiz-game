@@ -281,9 +281,8 @@ choices.forEach(choice => {
     if (availableQuestions.length > 10) {
       allowUserAnswer = true;
     } else {
-        alert("Your score is " + userScore);
-        return;
-        // return window.location.href = "score.html";
+        // alert("Your score is " + userScore);
+      return window.location.href = "score.html";
     }
 
     const userChoice = event.target;
@@ -302,8 +301,14 @@ choices.forEach(choice => {
       showQuestion();
     };
     console.log(userScore);
+    console.log(gameResult);
   })
 });
+
+let gameResult = userScore;
+sessionStorage.setItem("gameResult", gameresult);
+
+
 
 
 
