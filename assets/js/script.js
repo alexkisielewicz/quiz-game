@@ -75,11 +75,7 @@ function startGame() {
 function showQuestion() {
   questionCounter++;
   
-  // deselect all choices - DOESN'T WORK
-  choices.forEach(choice => {
-  choices.selected = false;
-  console.log(choices.selected);
- });
+
   
   // update progress bar display
   width += 10;
@@ -106,7 +102,14 @@ function showQuestion() {
 
 choices.forEach(choice => {
   choice.addEventListener("click", event => {
-    
+      // deselect all choices - DOESN'T WORK
+      choices.forEach(choice => {
+      choices.selected = false;
+      console.log(choices.selected);
+      });
+
+
+
     if (availableQuestions.length > 10) {
       allowUserAnswer = true;
     } else {

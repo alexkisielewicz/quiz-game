@@ -27,7 +27,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: inherit;
+  overflow: hidden;
 }
+
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -39,8 +41,8 @@ body {
 }
 
 .outer-container {
-  min-width: 600px;
-  max-width: 600px;
+  width: 600px;
+  max-width: 90%;
   position: fixed;
   margin: auto;
   text-align: center;
@@ -54,7 +56,7 @@ body {
 h1 {
   color: #000;
   font-family: 'SkyFall Done Regular';
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .button {
@@ -77,10 +79,15 @@ h1 {
   transform: scale(1.01);
 }
 
+.button:active .button:focus{
+  background-color: inherit;
+  outline: none;
+}
+
 .button-start {
   background-color: #FFF;
   font-family: 'SkyFall Done Regular';
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: bold;
   padding: 20px;
   margin: 0 auto;
@@ -91,7 +98,6 @@ h1 {
 .button-start:hover {
   color: #51301C;
   background-color: #FFD700;
-  font-size: 2em;
   font-weight: bold;
   border: 2px solid #787D83;
 }
@@ -102,7 +108,7 @@ h1 {
 
 #question {
   width: 100%;
-  font-size: xx-large;
+  font-size: 2rem;
   font-weight: bold;
   color: #FFF;
   background-color: #A88D64;
@@ -126,7 +132,7 @@ h1 {
 
 .interface-icons {
   color: #FFD700;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -168,7 +174,37 @@ footer {
 
 .social-icons {
   color:#FFF;
-  font-size: 2em;
+  font-size: 2rem;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+/* X-small devices, phones in portrait mode 576px*/
+@media (max-width: 575.98px) {
+
+  .outer-container {
+    width: 90%;
+  }
+
+  .progress-bar-outer {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .button-start {
+    font-size: 1.5rem;
+  }
+  
+  #question, .interface-icons {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .interface-icons, .interface-main-text {
+    margin: 10px;
+  }
 }
