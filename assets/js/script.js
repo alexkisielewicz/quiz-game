@@ -252,6 +252,7 @@ function startGame() {
 function showQuestion() {
   questionCounter++;
   
+  choices.checked = false;
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
@@ -300,13 +301,20 @@ choices.forEach(choice => {
       incorrectAnswer();
       showQuestion();
     };
+
     console.log(userScore);
+    console.log(typeof userScore);
+
+    gameResult = userScore;
+    sessionStorage.setItem("gameresult", gameResult);
+
     console.log(gameResult);
+    
   })
 });
 
 let gameResult = userScore;
-sessionStorage.setItem("gameResult", gameresult);
+sessionStorage.setItem("gameresult", gameResult);
 
 
 
