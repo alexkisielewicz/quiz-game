@@ -9,7 +9,7 @@
 
 :root {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(120, 125, 131, 0.6));
-  background-repeat: no-repeat;
+  color: #511F1C;
 }
 
 *, *::before, *::after {
@@ -19,7 +19,7 @@
 body {
   font-family: 'Merriweather', serif; 
   font-weight: 300;
-  color: #511c1c;
+  color: #511C1C;
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -61,7 +61,8 @@ h1 {
 
 .button {
   cursor: pointer;
-  background-color: #fff;
+  color: #511F1C;
+  background-color: #FFF;
   border: 2px solid #A88D64;
   font-family: inherit;
   font-size: 1em;
@@ -125,7 +126,7 @@ h1 {
 .interface {
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  color: #FFF;
   margin: 0;
   padding: 0;
 }
