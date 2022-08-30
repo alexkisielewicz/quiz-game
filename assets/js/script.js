@@ -252,7 +252,8 @@ function startGame() {
 function showQuestion() {
   questionCounter++;
   
-  choices.checked = false;
+  choices.selected = false;
+  console.log(choices.selected);
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
