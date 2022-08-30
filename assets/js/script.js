@@ -26,8 +26,11 @@ let userScore = document.getElementById("score");
 let progress = document.getElementById("progress");
 let width = 0;
 
-const choices = Array.from(document.getElementsByClassName("choice"));
+// Background
+let background = document.getElementsByTagName("body");
 
+// Choices 
+const choices = Array.from(document.getElementsByClassName("choice"));
 let answer1 = document.querySelector('[data-answer="1"]');
 let answer2 = document.querySelector('[data-answer="2"]');
 let answer3 = document.querySelector('[data-answer="3"]');
@@ -41,7 +44,7 @@ document.body.style.backgroundColor = "green";
 setTimeout( () => {
 document.body.style.backgroundColor = "inherit";        
 }, 800); 
-}
+};
 
 function incorrectAnswer() { 
 setTimeout( () => {
@@ -51,9 +54,9 @@ document.body.style.backgroundColor = "red";
 setTimeout( () => {
 document.body.style.backgroundColor = "inherit";        
 }, 800); 
-}
+}; 
 
-// 20 quiz questions array
+// 20 questions array
 const allQuestions = [
   {
     question: "What is James Bond's Secret Service Agent code name?", 
@@ -236,9 +239,6 @@ const allQuestions = [
   }
 ] 
 
-let background = document.getElementsByTagName("body");
-
-
 function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
@@ -252,7 +252,7 @@ function startGame() {
 function showQuestion() {
   questionCounter++;
   
-  // deselect all choices 
+  // deselect all choices - DOESN'T WORK
   choices.forEach(choice => {
   choices.selected = false;
   console.log(choices.selected);
@@ -263,7 +263,7 @@ function showQuestion() {
   progress.style.width = width + "%";
  
  // update score display
-  counter.innerText = `${questionCounter}/10`;
+  counter.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${questionCounter}/10`;
 
   // get random question from all questions
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -296,7 +296,7 @@ choices.forEach(choice => {
     
     if (userAnswer == currentQuestion["answer"]) {
       userScore++;
-      score.innerText = `${userScore} pts.`;
+      score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
 
       // feedback when answer is correct
       correctAnswer();
@@ -323,7 +323,10 @@ sessionStorage.setItem("gameresult", gameResult);
 
 
 
-
+// Issues:
+// - choices deselect - doesn't work
+// - max possible score is 9 instead of 10
+// - no delay to see if last question was answered correctly 
 
 // mp3 source https://archive.org/details/tvtunes_6995  
 
