@@ -10,7 +10,6 @@ const gameContainer = document.getElementById("game");
 const question = document.getElementById("question");
 
 let currentQuestion = {};
-let acceptingAnswers = false;
 
 let music = new Audio("assets/audio/bondtheme.mp3");
 // audio pause option to be added
@@ -21,6 +20,7 @@ questionCounter = 0;
 
 // Score
 let userScore = document.getElementById("score");
+userScore = 0;
 
 // Progress bar
 let progress = document.getElementById("progress");
@@ -30,8 +30,7 @@ let width = 0;
 let background = document.getElementsByTagName("body");
 
 // Mute audio
-let pauseButton = document.getElementById("audioControl");
-
+const pauseButton = document.getElementById("audioControl");
 pauseButton.addEventListener("click", function(){
   if(music.paused){
     music.play();
@@ -42,8 +41,6 @@ pauseButton.addEventListener("click", function(){
   }
 });
 
-
-
 // Choices 
 const choices = Array.from(document.getElementsByClassName("choice"));
 let answer1 = document.querySelector('[data-answer="1"]');
@@ -52,9 +49,9 @@ let answer3 = document.querySelector('[data-answer="3"]');
 let answer4 = document.querySelector('[data-answer="4"]');
 
 function correctAnswer() { 
-setTimeout( () => {
-// document.body.style.backgroundColor = "#007B00";
-// document.body.style.backgroundImage = "url('assets/images/bond.png')";
+userScore++;
+console.log("Score is " + userScore);
+  setTimeout( () => {
 document.body.style.background = "#007B00 url('assets/images/bond.png') no-repeat center";     
 }, 100); 
 
@@ -66,8 +63,6 @@ document.body.style.backgroundImage = "";
 
 function incorrectAnswer() { 
 setTimeout( () => {
-// document.body.style.backgroundColor = "#FFF";
-// document.body.style.backgroundImage = "url('assets/images/blood.png')";
 document.body.style.background = "#FF0000 url('assets/images/blood.png') repeat";     
 }, 100); 
 
@@ -80,18 +75,14 @@ document.body.style.backgroundImage = "";
 function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
-
   music.play();
   availableQuestions = [... allQuestions];
-  userScore = 0;
   showQuestion()
 }
 
 function showQuestion() {
   questionCounter++;
-  
 
-  
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
@@ -111,35 +102,18 @@ function showQuestion() {
 
  // remove shown question from available questions array
   availableQuestions.splice(questionIndex, 1);
-  allowUserAnswer = true;
 };
 
 
 choices.forEach(choice => {
   choice.addEventListener("click", event => {
-      // deselect all choices - DOESN'T WORK
-      choices.forEach(choice => {
-      choices.selected = false;
-      console.log(choices.selected);
-      });
-
-
-
-    if (availableQuestions.length > 10) {
-      allowUserAnswer = true;
-    } else {
-      return window.location.href = "score.html";
-    }
-
-    const userChoice = event.target;
-    const userAnswer = userChoice.dataset["answer"];
-    
-    if (userAnswer == currentQuestion["answer"]) {
-      ++userScore;
-      score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
-
+    if (availableQuestions.length >= 11) {
+      let userChoice = event.target;
+      let userAnswer = userChoice.dataset["answer"];
+      if (userAnswer == currentQuestion["answer"]) {
       // feedback when answer is correct
       correctAnswer();
+      score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
       setTimeout(() => {
         showQuestion();
       }, 1000);
@@ -150,27 +124,20 @@ choices.forEach(choice => {
         showQuestion();
       }, 1000);
     };
-
-    console.log(userScore);
-    console.log(typeof userScore);
+    } else {
+      return window.location.href = "score.html";
+    };
 
     gameResult = userScore;
     sessionStorage.setItem("gameresult", gameResult);
-
     console.log(gameResult);
-    
   })
 });
-
-let gameResult = userScore;
-sessionStorage.setItem("gameresult", gameResult);
-
-
 
 // Issues:
 // - choices deselect - doesn't work
 // - max possible score is 9 instead of 10
-// - no delay to see if the last question was answered correctly 
+// - no delay to see if the last 10th question was answered correctly 
 
 // mp3 source https://archive.org/details/tvtunes_6995  
 // bg png https://www.stickpng.com/ 
