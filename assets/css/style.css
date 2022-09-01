@@ -114,14 +114,14 @@ h1 {
 	font-weight: bold;
 	padding: 20px;
 	margin: 10px auto;
-	width: 90%;
+	width: 100%;
 	border: 2px solid #787D83;
   border-radius: 10px;
   box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
 #rules > ul {
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-image: url('../images/bullet.png') ;
 }
 
@@ -135,14 +135,14 @@ li {
 
 #question {
 	width: 100%;
-	font-size: rem;
+	font-size: 1.25rem;
 	font-weight: bold;
 	color: #FFF;
 	background-color: #A88D64;
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 	border-radius: 10px;
 	margin-bottom: 30px;
-	padding: 10px;
+	padding: 15px;
 }
 
 .hide {
@@ -222,13 +222,18 @@ footer {
 		font-size: 2rem;
 	}
 
+  #rules {
+    width: 90%;
+    font-size: 1rem;
+  }
+
 	.button-start {
 		font-size: 1.5rem;
 	}
 
 	#question,
 	.interface-icons {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		margin-bottom: 5px;
 	}
 
