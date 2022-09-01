@@ -107,20 +107,26 @@ h1 {
 }
 
 #rules {
+  font-family: 'SkyFall Done Regular';
   background-color: #FFF;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
   text-align: center;
 	font-weight: bold;
 	padding: 20px;
 	margin: 10px auto;
-	width: 80%;
+	width: 90%;
 	border: 2px solid #787D83;
   border-radius: 10px;
   box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
 #rules > ul {
+  list-style-position: inside;
   list-style-image: url('../images/bullet.png') ;
+}
+
+li {
+  margin-bottom: 1.25rem;
 }
 
 #game {
@@ -129,7 +135,7 @@ h1 {
 
 #question {
 	width: 100%;
-	font-size: 2rem;
+	font-size: rem;
 	font-weight: bold;
 	color: #FFF;
 	background-color: #A88D64;
