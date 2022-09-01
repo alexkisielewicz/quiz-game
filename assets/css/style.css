@@ -93,9 +93,10 @@ h1 {
 	font-size: 2rem;
 	font-weight: bold;
 	padding: 20px;
-	margin: 0 auto;
+	margin: 10px auto;
 	width: auto;
 	border: 2px solid #787D83;
+  display: block;
 }
 
 .button-start:hover {
@@ -103,6 +104,23 @@ h1 {
 	background-color: #FFD700;
 	font-weight: bold;
 	border: 2px solid #787D83;
+}
+
+#rules {
+  background-color: #FFF;
+	font-size: 1.5rem;
+  text-align: center;
+	font-weight: bold;
+	padding: 20px;
+	margin: 10px auto;
+	width: 80%;
+	border: 2px solid #787D83;
+  border-radius: 10px;
+  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+}
+
+#rules > ul {
+  list-style-image: url('../images/bullet.png') ;
 }
 
 #game {

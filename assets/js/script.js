@@ -1,10 +1,13 @@
 // wait for DOM to load first
 document.addEventListener("DOMContentLoaded", function () {
-  let startButton = document.getElementById("startButton");
+  const startButton = document.getElementById("startButton");
+  const rulesButton = document.getElementById("rulesButton");
   startButton.addEventListener("click", startGame);
+  rulesButton.addEventListener("click", showRules);
 });
 
 // get HTML elements to hide/show when game starts
+const rulesContainer = document.getElementById("rules");
 const controlsContainer = document.getElementById("controls");
 const gameContainer = document.getElementById("game");
 const question = document.getElementById("question");
@@ -48,6 +51,13 @@ let answer2 = document.querySelector('[data-answer="2"]');
 let answer3 = document.querySelector('[data-answer="3"]');
 let answer4 = document.querySelector('[data-answer="4"]');
 
+
+function showRules() {
+  rulesContainer.classList.remove("hide");
+  rulesButton.classList.add("hide");
+
+}
+
 function correctAnswer() {
   userScore++;
   console.log("Score is " + userScore);
@@ -75,6 +85,7 @@ function incorrectAnswer() {
 }
 
 function startGame() {
+  rulesContainer.classList.add("hide");
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   music.play();
