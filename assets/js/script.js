@@ -1,8 +1,8 @@
 // wait for DOM to load first
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let startButton = document.getElementById("startButton");
   startButton.addEventListener("click", startGame);
-}); 
+});
 
 // get HTML elements to hide/show when game starts
 const controlsContainer = document.getElementById("controls");
@@ -31,8 +31,8 @@ let background = document.getElementsByTagName("body");
 
 // Mute audio
 const pauseButton = document.getElementById("audioControl");
-pauseButton.addEventListener("click", function(){
-  if(music.paused){
+pauseButton.addEventListener("click", function () {
+  if (music.paused) {
     music.play();
     pauseButton.innerHTML = `<i class="fa-solid fa-pause"></i>`;
   } else {
@@ -41,43 +41,45 @@ pauseButton.addEventListener("click", function(){
   }
 });
 
-// Choices 
+// Choices
 const choices = Array.from(document.getElementsByClassName("choice"));
 let answer1 = document.querySelector('[data-answer="1"]');
 let answer2 = document.querySelector('[data-answer="2"]');
 let answer3 = document.querySelector('[data-answer="3"]');
 let answer4 = document.querySelector('[data-answer="4"]');
 
-function correctAnswer() { 
-userScore++;
-console.log("Score is " + userScore);
-  setTimeout( () => {
-document.body.style.background = "#007B00 url('assets/images/bond.png') no-repeat center";     
-}, 100); 
+function correctAnswer() {
+  userScore++;
+  console.log("Score is " + userScore);
+  setTimeout(() => {
+    document.body.style.background =
+      "#007B00 url('assets/images/bond.png') no-repeat center";
+  }, 100);
 
-setTimeout( () => {
-document.body.style.backgroundColor = "inherit";
-document.body.style.backgroundImage = "";        
-}, 800); 
-};
+  setTimeout(() => {
+    document.body.style.backgroundColor = "inherit";
+    document.body.style.backgroundImage = "";
+  }, 800);
+}
 
-function incorrectAnswer() { 
-setTimeout( () => {
-document.body.style.background = "#FF0000 url('assets/images/blood.png') repeat";     
-}, 100); 
+function incorrectAnswer() {
+  setTimeout(() => {
+    document.body.style.background =
+      "#FF0000 url('assets/images/blood.png') repeat";
+  }, 100);
 
-setTimeout( () => {
-document.body.style.backgroundColor = "inherit";     
-document.body.style.backgroundImage = "";     
-}, 800); 
-}; 
+  setTimeout(() => {
+    document.body.style.backgroundColor = "inherit";
+    document.body.style.backgroundImage = "";
+  }, 800);
+}
 
 function startGame() {
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
   music.play();
-  availableQuestions = [... allQuestions];
-  showQuestion()
+  availableQuestions = [...allQuestions];
+  showQuestion();
 }
 
 function showQuestion() {
@@ -86,58 +88,58 @@ function showQuestion() {
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
- 
- // update score display
+
+  // update score display
   counter.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${questionCounter}/10`;
 
   // get random question from all questions
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
-  
- choices.forEach(choice => {
-  const optionIndex = choice.dataset["answer"];
-  choice.innerText = currentQuestion["option" + optionIndex];
- });
 
- // remove shown question from available questions array
+  choices.forEach((choice) => {
+    const optionIndex = choice.dataset["answer"];
+    choice.innerText = currentQuestion["option" + optionIndex];
+  });
+
+  // remove shown question from available questions array
   availableQuestions.splice(questionIndex, 1);
-};
+}
 
-
-choices.forEach(choice => {
-  choice.addEventListener("click", event => {
+choices.forEach((choice) => {
+  choice.addEventListener("click", (event) => {
     if (availableQuestions.length >= 11) {
       let userChoice = event.target;
       let userAnswer = userChoice.dataset["answer"];
       if (userAnswer == currentQuestion["answer"]) {
-      // feedback when answer is correct
-      correctAnswer();
-      score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
-      setTimeout(() => {
-        showQuestion();
-      }, 1000);
-    } else {
-      // feedback when answer is incorrect
-      incorrectAnswer();
-      setTimeout(() => {
-        showQuestion();
-      }, 1000);
-    };
+        // feedback when answer is correct
+        correctAnswer();
+        score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
+        setTimeout(() => {
+          showQuestion();
+        }, 1000);
+      } else {
+        // feedback when answer is incorrect
+        incorrectAnswer();
+        setTimeout(() => {
+          showQuestion();
+        }, 1000);
+      }
     } else {
       return window.location.href = "score.html";
-    };
+      //return alert("Your score is" + " " + gameResult);
+    }
 
     gameResult = userScore;
     sessionStorage.setItem("gameresult", gameResult);
     console.log(gameResult);
-  })
+  });
 });
 
 // Issues:
 // - choices deselect - doesn't work
 // - max possible score is 9 instead of 10
-// - no delay to see if the last 10th question was answered correctly 
+// - no delay to see if the last 10th question was answered correctly
 
-// mp3 source https://archive.org/details/tvtunes_6995  
-// bg png https://www.stickpng.com/ 
+// mp3 source https://archive.org/details/tvtunes_6995
+// bg png https://www.stickpng.com/

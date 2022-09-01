@@ -1,211 +1,215 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
 
 @font-face {
-  font-family: 'SkyFall Done Regular';
-  font-style: normal;
-  font-weight: normal;
-  src: local('SkyFall Done Regular'), url('../font/skyfall_done.woff') format('woff');
+	font-family: 'SkyFall Done Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('SkyFall Done Regular'), url('../font/skyfall_done.woff') format('woff');
 }
 
 :root {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(120, 125, 131, 0.6));
-  color: #511F1C;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(120, 125, 131, 0.6));
+	color: #511F1C;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 body {
-  font-family: 'Merriweather', serif; 
-  font-weight: 300;
-  color: #511C1C;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: inherit;
-  overflow: hidden;
+	font-family: 'Merriweather', serif;
+	font-weight: 300;
+	color: #511C1C;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: inherit;
+	overflow: hidden;
 }
 
 .wrapper {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  background: url(../images/barrel.png) no-repeat center / cover;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	background: url(../images/barrel.png) no-repeat center / cover;
 }
 
 .outer-container {
-  width: 600px;
-  max-width: 90%;
-  position: fixed;
-  margin: auto;
-  text-align: center;
-  padding: 20px;
+	width: 600px;
+	max-width: 90%;
+	position: fixed;
+	margin: auto;
+	text-align: center;
+	padding: 20px;
 }
 
 #controls {
- display: visible;
+	display: visible;
 }
 
 h1 {
-  color: #000;
-  font-family: 'SkyFall Done Regular';
-  font-size: 3rem;
+	color: #000;
+	font-family: 'SkyFall Done Regular';
+	font-size: 3rem;
 }
 
 .button {
-  cursor: pointer;
-  color: #511F1C;
-  background-color: #FFF;
-  border: 2px solid #A88D64;
-  font-family: inherit;
-  font-size: 1em;
-  padding: 15px;
-  margin: 5px 0;
-  border-radius: 10px;
-  width: 100%;
+	cursor: pointer;
+	color: #511F1C;
+	background-color: #FFF;
+	border: 2px solid #A88D64;
+	font-family: inherit;
+	font-size: 1em;
+	padding: 15px;
+	margin: 5px 0;
+	border-radius: 10px;
+	width: 100%;
 }
 
 .button:hover {
-  color: #FFF;
-  background-color: #A88D64;
-  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
-  transition: transform 100ms;
-  transform: scale(1.01);
+	color: #FFF;
+	background-color: #A88D64;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+	transition: transform 100ms;
+	transform: scale(1.01);
 }
 
-.button:active .button:focus{
-  background-color: inherit;
-  outline: none;
+.button:active .button:focus {
+	background-color: inherit;
+	outline: none;
 }
 
 .button-start {
-  background-color: #FFF;
-  font-family: 'SkyFall Done Regular';
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 20px;
-  margin: 0 auto;
-  width: auto;
-  border: 2px solid #787D83;
+	background-color: #FFF;
+	font-family: 'SkyFall Done Regular';
+	font-size: 2rem;
+	font-weight: bold;
+	padding: 20px;
+	margin: 0 auto;
+	width: auto;
+	border: 2px solid #787D83;
 }
 
 .button-start:hover {
-  color: #51301C;
-  background-color: #FFD700;
-  font-weight: bold;
-  border: 2px solid #787D83;
+	color: #51301C;
+	background-color: #FFD700;
+	font-weight: bold;
+	border: 2px solid #787D83;
 }
 
 #game {
-  width: 100%;
+	width: 100%;
 }
 
 #question {
-  width: 100%;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #FFF;
-  background-color: #A88D64;
-  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-  margin-bottom: 30px;
-  padding: 10px;
+	width: 100%;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #A88D64;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	margin-bottom: 30px;
+	padding: 10px;
 }
 
 .hide {
-  display: none;
+	display: none;
 }
 
 .interface {
-  display: flex;
-  justify-content: space-between;
-  color: #FFF;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	justify-content: space-between;
+	color: #FFF;
+	margin: 0;
+	padding: 0;
 }
 
 .interface-icons {
-  color: #FFD700;
-  font-size: 1.5rem;
-  padding: 10px;
-  margin-bottom: 10px;
+	color: #FFD700;
+	font-size: 1.5rem;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 .interface-main-text {
-  font-family: 'Merriweather', serif;
-  font-size: 2rem;
-  margin: 1rem 0;
+	font-family: 'Merriweather', serif;
+	font-size: 2rem;
+	margin: 1rem 0;
 }
 
 .progress-bar-outer {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  background-color: #787D83;
-  box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.3);
-  border: 1px solid #FFF;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	background-color: #787D83;
+	box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.3);
+	border: 1px solid #FFF;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
 }
 
 .progress-bar-inner {
-  width: 0%;
-  height: 30px;
-  background: linear-gradient(90deg, rgba(255, 215, 0, 0.7) 70%, rgba(255, 215, 0, 0.2) 100%);
-  border-radius: 1rem;
-  transition-duration: 500ms;
+	width: 0%;
+	height: 30px;
+	background: linear-gradient(90deg, rgba(255, 215, 0, 0.7) 70%, rgba(255, 215, 0, 0.2) 100%);
+	border-radius: 1rem;
+	transition-duration: 500ms;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #000;
-  height: 50px;
-  color: #FFF;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	background-color: #000;
+	height: 50px;
+	color: #FFF;
 }
 
 .social-icons {
-  color:#FFF;
-  font-size: 2rem;
-  padding: 10px;
-  margin-bottom: 10px;
+	color: #FFF;
+	font-size: 2rem;
+	padding: 10px;
+	margin-bottom: 10px;
 }
 
 /* X-small devices, phones in portrait mode 576px*/
 @media (max-width: 575.98px) {
 
-  .outer-container {
-    width: 90%;
-  }
+	.outer-container {
+		width: 90%;
+	}
 
-  .progress-bar-outer {
-    width: 90%;
-    margin: 0 auto;
-  }
+	.progress-bar-outer {
+		width: 90%;
+		margin: 0 auto;
+	}
 
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .button-start {
-    font-size: 1.5rem;
-  }
-  
-  #question, .interface-icons {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-  }
-  
-  .interface-icons, .interface-main-text {
-    margin: 10px;
-  }
+	h1 {
+		font-size: 2rem;
+	}
+
+	.button-start {
+		font-size: 1.5rem;
+	}
+
+	#question,
+	.interface-icons {
+		font-size: 1.5rem;
+		margin-bottom: 5px;
+	}
+
+	.interface-icons,
+	.interface-main-text {
+		margin: 10px;
+	}
 }
