@@ -61,6 +61,11 @@ h1 {
 	font-size: 3rem;
 }
 
+h2 {
+  font-family: 'SkyFall Done Regular';
+	font-size: 1.5rem;
+}
+
 .button {
 	cursor: pointer;
 	color: #511F1C;
