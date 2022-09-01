@@ -150,6 +150,17 @@ li {
 	padding: 15px;
 }
 
+#endgame  {
+  width: 100%;
+  background-color: lightgray;
+  padding: 15px;
+  border-radius: 1rem;
+}
+
+.black {
+  color: #000;
+}
+
 .hide {
 	display: none;
 }
@@ -224,8 +235,15 @@ footer {
 	}
 
 	h1 {
-		font-size: 2rem;
-	}
+	  color: #000;
+	  font-family: 'SkyFall Done Regular';
+	  font-size: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'SkyFall Done Regular';
+	  font-size: 1rem;
+  }
 
   #rules {
     width: 90%;
@@ -246,4 +264,9 @@ footer {
 	.interface-main-text {
 		margin: 10px;
 	}
+
+  .endgame-image {
+    width: 60%;
+    height: auto;
+  }
 }

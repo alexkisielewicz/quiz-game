@@ -88,6 +88,7 @@ function startGame() {
   rulesContainer.classList.add("hide");
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
+  
   music.play();
   availableQuestions = [...allQuestions];
   showQuestion();
