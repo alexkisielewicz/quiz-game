@@ -1,5 +1,5 @@
 // wait for DOM to load first
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('DOMContentLoaded', () => {
   const startButton = document.getElementById("startButton");
   const rulesButton = document.getElementById("rulesButton");
   startButton.addEventListener("click", startGame);
@@ -14,8 +14,6 @@ const question = document.getElementById("question");
 
 let currentQuestion = {};
 
-let music = new Audio("assets/audio/bondtheme.mp3");
-// audio pause option to be added
 
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
@@ -29,10 +27,8 @@ userScore = 0;
 let progress = document.getElementById("progress");
 let width = 0;
 
-// Background
-let background = document.getElementsByTagName("body");
-
-// Mute audio
+// Play audio with pause option
+const music = new Audio("assets/audio/bondtheme.mp3");
 const pauseButton = document.getElementById("audioControl");
 pauseButton.addEventListener("click", function () {
   if (music.paused) {
@@ -44,23 +40,23 @@ pauseButton.addEventListener("click", function () {
   }
 });
 
-// Choices
+// Query DOM for choices and create array with answer buttons
 const choices = Array.from(document.getElementsByClassName("choice"));
 let answer1 = document.querySelector('[data-answer="1"]');
 let answer2 = document.querySelector('[data-answer="2"]');
 let answer3 = document.querySelector('[data-answer="3"]');
 let answer4 = document.querySelector('[data-answer="4"]');
 
-
 function showRules() {
   rulesContainer.classList.remove("hide");
   rulesButton.classList.add("hide");
-
 }
 
 function correctAnswer() {
   userScore++;
-  console.log("Score is " + userScore);
+  correctAnswerButton = (choices[rightAnswer - 1]);
+  correctAnswerButton.classList.add("correct");
+  
   setTimeout(() => {
     document.body.style.background =
       "#007B00 url('assets/images/bond.png') no-repeat center";
@@ -73,6 +69,8 @@ function correctAnswer() {
 }
 
 function incorrectAnswer() {
+  correctAnswerButton = (choices[rightAnswer - 1]);
+  correctAnswerButton.classList.add("correct");  
   setTimeout(() => {
     document.body.style.background =
       "#FF0000 url('assets/images/blood.png') repeat";
@@ -88,15 +86,14 @@ function startGame() {
   rulesContainer.classList.add("hide");
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
-  
   music.play();
   availableQuestions = [...allQuestions];
   showQuestion();
 }
 
 function showQuestion() {
+  
   questionCounter++;
-
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
@@ -105,53 +102,84 @@ function showQuestion() {
   counter.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${questionCounter}/10`;
 
   // get random question from all questions
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
+  
+  rightAnswer = currentQuestion.answer;
+  console.log("Correct answer is option " + rightAnswer); 
+
 
   choices.forEach((choice) => {
-    const optionIndex = choice.dataset["answer"];
+    const optionIndex = choice.dataset.answer;
     choice.innerText = currentQuestion["option" + optionIndex];
   });
-
+  
+  removeUsedQuestion();
   // remove shown question from available questions array
+  
+}
+
+function removeUsedQuestion() {
   availableQuestions.splice(questionIndex, 1);
 }
 
-choices.forEach((choice) => {
-  choice.addEventListener("click", (event) => {
-    if (availableQuestions.length >= 11) {
-      let userChoice = event.target;
-      let userAnswer = userChoice.dataset["answer"];
-      if (userAnswer == currentQuestion["answer"]) {
-        // feedback when answer is correct
+
+function computeAnswer() {
+      userChoice = event.target;
+      userAnswer = userChoice.dataset.answer;
+      console.log(userAnswer);
+      console.log(userChoice);
+
+  if (userAnswer == currentQuestion.answer) {
         correctAnswer();
+        //feedback for correct answer
         score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
         setTimeout(() => {
+          correctAnswerButton.classList.remove("correct");
           showQuestion();
         }, 1000);
       } else {
-        // feedback when answer is incorrect
+        // feedback for incorrect answer
         incorrectAnswer();
         setTimeout(() => {
+          correctAnswerButton.classList.remove("correct");
           showQuestion();
         }, 1000);
       }
+    gameResult = userScore;
+    sessionStorage.setItem("gameresult", gameResult);
+}
+
+
+choices.forEach((choice) => {
+  choice.addEventListener("click", () => {
+    
+
+    if (availableQuestions.length >= 11) {
+      
+      computeAnswer();
+      
     } else {
+      
       return window.location.href = "score.html";
       //return alert("Your score is" + " " + gameResult);
     }
-
-    gameResult = userScore;
-    sessionStorage.setItem("gameresult", gameResult);
-    console.log(gameResult);
+    console.log(availableQuestions.length);
+    
   });
 });
 
+
+// correctAnswerButton = (choices[rightAnswer - 1]);
+
 // Issues:
-// - choices deselect - doesn't work
-// - max possible score is 9 instead of 10
+// - choices deselect after giving answer - don't know how to do that
+// - max possible score is 9 instead of 10 
 // - no delay to see if the last 10th question was answered correctly
 
-// mp3 source https://archive.org/details/tvtunes_6995
-// bg png https://www.stickpng.com/
+
+
+// mp3 source --> https://archive.org/details/tvtunes_6995
+// bg png source --> https://www.stickpng.com/
+// local storage --> https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
