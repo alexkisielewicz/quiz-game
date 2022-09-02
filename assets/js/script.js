@@ -14,7 +14,6 @@ const question = document.getElementById("question");
 
 let currentQuestion = {};
 
-
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0;
@@ -58,27 +57,29 @@ function correctAnswer() {
   correctAnswerButton.classList.add("correct");
   
   setTimeout(() => {
-    document.body.style.background =
-      "#007B00 url('assets/images/bond.png') no-repeat center";
+    document.body.style.background = "#007B00 url('assets/images/bond.png') no-repeat center";
   }, 100);
 
   setTimeout(() => {
     document.body.style.backgroundColor = "inherit";
     document.body.style.backgroundImage = "";
+    correctAnswerButton.classList.remove("correct");
   }, 800);
 }
 
 function incorrectAnswer() {
   correctAnswerButton = (choices[rightAnswer - 1]);
-  correctAnswerButton.classList.add("correct");  
+  correctAnswerButton.classList.add("correct");
   setTimeout(() => {
-    document.body.style.background =
-      "#FF0000 url('assets/images/blood.png') repeat";
+    userChoice.classList.add("incorrect");
+    document.body.style.background = "#FF5A5A url('assets/images/blood.png') repeat";
   }, 100);
 
   setTimeout(() => {
     document.body.style.backgroundColor = "inherit";
     document.body.style.backgroundImage = "";
+    userChoice.classList.remove("incorrect");
+    correctAnswerButton.classList.remove("correct");
   }, 800);
 }
 
@@ -92,7 +93,6 @@ function startGame() {
 }
 
 function showQuestion() {
-  
   questionCounter++;
   // update progress bar display
   width += 10;
@@ -108,8 +108,7 @@ function showQuestion() {
   
   rightAnswer = currentQuestion.answer;
   console.log("Correct answer is option " + rightAnswer); 
-
-
+  
   choices.forEach((choice) => {
     const optionIndex = choice.dataset.answer;
     choice.innerText = currentQuestion["option" + optionIndex];
@@ -128,18 +127,19 @@ function removeUsedQuestion() {
 function computeAnswer() {
       userChoice = event.target;
       userAnswer = userChoice.dataset.answer;
-      console.log(userAnswer);
-      console.log(userChoice);
-
+      
+      
   if (userAnswer == currentQuestion.answer) {
         correctAnswer();
         //feedback for correct answer
         score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
+        
         setTimeout(() => {
           correctAnswerButton.classList.remove("correct");
           showQuestion();
         }, 1000);
       } else {
+        // userChoice.classList.add("incorrect");
         // feedback for incorrect answer
         incorrectAnswer();
         setTimeout(() => {
