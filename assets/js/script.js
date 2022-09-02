@@ -28,6 +28,30 @@ let width = 0;
 
 // Play audio with pause option
 const music = new Audio("assets/audio/bondtheme.mp3");
+music.volume = 0.4;
+// const good = new Audio("assets/audio/good1.mp3");
+// const wrong = new Audio("assets/audio/wrong1.mp3");
+
+
+const audioFilesGood = [
+    "assets/audio/good1.mp3",
+    "assets/audio/good2.mp3",
+    "assets/audio/good3.mp3",
+    "assets/audio/good4.mp3",
+    "assets/audio/good5.mp3",
+]
+
+const audioFilesWrong = [
+    "assets/audio/wrong1.mp3",
+    "assets/audio/wrong2.mp3",
+    "assets/audio/wrong3.mp3",
+    "assets/audio/wrong4.mp3",
+    "assets/audio/wrong5.mp3",
+    "assets/audio/wrong6.mp3",
+    "assets/audio/wrong7.mp3",
+    "assets/audio/wrong8.mp3",
+]
+
 const pauseButton = document.getElementById("audioControl");
 pauseButton.addEventListener("click", function () {
   if (music.paused) {
@@ -52,6 +76,7 @@ function showRules() {
 }
 
 function correctAnswer() {
+  good.play();
   userScore++;
   correctAnswerButton = (choices[rightAnswer - 1]);
   correctAnswerButton.classList.add("correct");
@@ -68,6 +93,7 @@ function correctAnswer() {
 }
 
 function incorrectAnswer() {
+  wrong.play();
   correctAnswerButton = (choices[rightAnswer - 1]);
   correctAnswerButton.classList.add("correct");
   setTimeout(() => {
@@ -94,6 +120,17 @@ function startGame() {
 
 function showQuestion() {
   questionCounter++;
+
+  let randomAudioFileGood = audioFilesGood[Math.floor(Math.random() * audioFilesGood.length)];
+  good = new Audio(randomAudioFileGood);
+  console.log(randomAudioFileGood);
+
+  let randomAudioFileWrong = audioFilesWrong[Math.floor(Math.random() * audioFilesWrong.length)];
+  wrong = new Audio(randomAudioFileWrong);
+  console.log(randomAudioFileWrong);
+
+
+
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
@@ -179,7 +216,7 @@ choices.forEach((choice) => {
 // - no delay to see if the last 10th question was answered correctly
 
 
-
+// random audio array idea --> https://stackoverflow.com/questions/27053633/how-to-make-an-array-of-audio-files-randomly-in-javascript
 // mp3 source --> https://archive.org/details/tvtunes_6995
 // bg png source --> https://www.stickpng.com/
 // local storage --> https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
