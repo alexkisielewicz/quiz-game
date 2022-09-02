@@ -153,12 +153,14 @@ li {
   color: #FFF;
   border-color: #0F0;
   background-color: #00AF00;
+  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
 .incorrect, .incorrect:hover {
   color: #FFF;
-  border-color: #F00;
-  background-color: #C00;
+  border-color: #ff0000;
+  background-color: #a00;
+  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
 #endgame {
