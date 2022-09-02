@@ -91,11 +91,6 @@ h2 {
 	transform: scale(1.01);
 }
 
-.button:active .button:focus {
-	background-color: inherit;
-	outline: none;
-}
-
 .button-start {
 	background-color: #FFF;
 	font-family: 'SkyFall Done Regular';
@@ -152,6 +147,18 @@ li {
 	border-radius: 10px;
 	margin-bottom: 30px;
 	padding: 15px;
+}
+
+.correct, .correct:hover {
+  color: #FFF;
+  border-color: #0F0;
+  background-color: #00AF00;
+}
+
+.incorrect, .incorrect:hover {
+  color: #FFF;
+  border-color: #F00;
+  background-color: #C00;
 }
 
 #endgame {
