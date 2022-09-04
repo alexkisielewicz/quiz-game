@@ -52,7 +52,7 @@ body {
 }
 
 #controls {
-	display: visible;
+	visibility: visible;
 }
 
 h1 {
