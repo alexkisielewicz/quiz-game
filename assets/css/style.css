@@ -237,6 +237,10 @@ footer {
 	margin-bottom: 10px;
 }
 
+.social-icons:hover {
+  color: #FFD700;
+}
+
 /* X-small devices, phones in portrait mode 576px*/
 @media (max-width: 575.98px) {
 
@@ -286,14 +290,8 @@ footer {
   }
 }
 
-/* Tablets, up to 768px */
-@media only screen and (min-width: 576px) and (max-width: 767.98px) {
-
-
-}
+/* Tablets, up to 768px
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {}
 
 /* Medium devices (tablets, bigger than 768 px but less than 992px) */
-@media only screen and (min-width: 768px) and (max-width: 991.98px) {
-
-
-}
+/* @media only screen and (min-width: 768px) and (max-width: 991.98px) {} */
