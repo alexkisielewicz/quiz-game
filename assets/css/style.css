@@ -55,19 +55,19 @@ body {
 	display: visible;
 }
 
-h1  {
+h1 {
 	color: #000;
 	font-family: 'SkyFall Done Regular';
 	font-size: 3rem;
 }
 
 h2 {
-  font-family: 'SkyFall Done Regular';
+	font-family: 'SkyFall Done Regular';
 	font-size: 1.5rem;
 }
 
 #logo {
-  text-shadow: 1px 1px 1px #FFF, 0 0 25px #FFF, 0 0 5px #FFF;
+	text-shadow: 1px 1px 1px #FFF, 0 0 25px #FFF, 0 0 5px #FFF;
 }
 
 .button {
@@ -86,6 +86,7 @@ h2 {
 .button:hover {
 	color: #FFF;
 	background-color: #A88D64;
+	border: 2px solid #FFF;
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 	transition: transform 100ms;
 	transform: scale(1.01);
@@ -100,7 +101,7 @@ h2 {
 	margin: 10px auto;
 	width: auto;
 	border: 2px solid #787D83;
-  display: block;
+	display: block;
 }
 
 .button-start:hover {
@@ -111,31 +112,31 @@ h2 {
 }
 
 #rules {
-  font-family: 'SkyFall Done Regular';
-  background-color: #FFF;
+	font-family: 'SkyFall Done Regular';
+	background-color: #FFF;
 	font-size: 1.25rem;
-  text-align: center;
+	text-align: center;
 	font-weight: bold;
 	padding: 20px;
 	margin: 10px auto;
 	width: 100%;
 	border: 2px solid #787D83;
-  border-radius: 10px;
-  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
-#rules > ul {
-  list-style-position: outside;
-  list-style-image: url('../images/bullet.png') ;
+#rules>ul {
+	list-style-position: outside;
+	list-style-image: url('../images/bullet.png');
 }
 
 li {
-  margin-bottom: 1.25rem;
+	margin-bottom: 1.25rem;
 }
 
 #game {
 	width: 90%;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 #question {
@@ -150,30 +151,32 @@ li {
 	padding: 15px;
 }
 
-.correct, .correct:hover {
-  color: #FFF;
-  border-color: #0F0;
-  background-color: #00AF00;
-  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+.correct,
+.correct:hover {
+	color: #FFF;
+	border-color: #0F0;
+	background-color: #00AF00;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
-.incorrect, .incorrect:hover {
-  color: #FFF;
-  border-color: #ff0000;
-  background-color: #a00;
-  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+.incorrect,
+.incorrect:hover {
+	color: #FFF;
+	border-color: #ff0000;
+	background-color: #a00;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
 #endgame {
-  width: 100%;
-  background-color: lightgray;
-  padding: 10px;
-  border-radius: 1rem;
+	width: 100%;
+	background-color: lightgray;
+	padding: 10px;
+	border-radius: 1rem;
 }
 
 .quiz-result {
-  color: #000;
-  font-size: 3rem;
+	color: #000;
+	font-size: 3rem;
 }
 
 .hide {
@@ -238,7 +241,7 @@ footer {
 }
 
 .social-icons:hover {
-  color: #FFD700;
+	color: #FFD700;
 }
 
 /* X-small devices, phones in portrait mode 576px*/
@@ -254,20 +257,20 @@ footer {
 	}
 
 	h1 {
-	  color: #000;
-	  font-family: 'SkyFall Done Regular';
-	  font-size: 1.75rem;
-  }
+		color: #000;
+		font-family: 'SkyFall Done Regular';
+		font-size: 1.75rem;
+	}
 
-  h2 {
-    font-family: 'SkyFall Done Regular';
-	  font-size: 1rem;
-  }
+	h2 {
+		font-family: 'SkyFall Done Regular';
+		font-size: 1rem;
+	}
 
-  #rules {
-    width: 90%;
-    font-size: 1rem;
-  }
+	#rules {
+		width: 90%;
+		font-size: 1rem;
+	}
 
 	.button-start {
 		font-size: 1.5rem;
@@ -284,10 +287,10 @@ footer {
 		margin: 10px;
 	}
 
-  .endgame-image {
-    width: 50%;
-    height: auto;
-  }
+	.endgame-image {
+		width: 50%;
+		height: auto;
+	}
 }
 
 /* Tablets, up to 768px
