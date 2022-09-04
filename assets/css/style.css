@@ -135,6 +135,7 @@ li {
 
 #game {
 	width: 90%;
+  margin: 0 auto;
 }
 
 #question {
@@ -166,7 +167,7 @@ li {
 #endgame {
   width: 100%;
   background-color: lightgray;
-  padding: 15px;
+  padding: 10px;
   border-radius: 1rem;
 }
 
@@ -280,7 +281,19 @@ footer {
 	}
 
   .endgame-image {
-    width: 60%;
+    width: 50%;
     height: auto;
   }
+}
+
+/* Tablets, up to 768px */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+
+
+}
+
+/* Medium devices (tablets, bigger than 768 px but less than 992px) */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+
+
 }
