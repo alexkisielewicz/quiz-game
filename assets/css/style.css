@@ -80,7 +80,7 @@ h2 {
 	padding: 15px;
 	margin: 5px 0;
 	border-radius: 10px;
-	width: 100%;
+	width: 90%;
 }
 
 .button:hover {
@@ -134,7 +134,7 @@ li {
 }
 
 #game {
-	width: 100%;
+	width: 90%;
 }
 
 #question {
