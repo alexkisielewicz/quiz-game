@@ -53,7 +53,7 @@ const audioFilesCorrect = [
     "assets/audio/good7.mp3",
     "assets/audio/good8.mp3",
     "assets/audio/good9.mp3",
-    "assets/audio/good10.mp3",
+    "assets/audio/good10.mp3"
 ]
 
 // Sounds to play when user gives incorrect answer
@@ -68,6 +68,11 @@ const audioFilesIncorrect = [
     "assets/audio/wrong8.mp3",
     "assets/audio/wrong9.mp3",
     "assets/audio/wrong10.mp3",
+    "assets/audio/wrong11.mp3",
+    "assets/audio/wrong12.mp3",
+    "assets/audio/wrong13.mp3",
+    "assets/audio/wrong14.mp3",
+    "assets/audio/wrong15.mp3"
 ]
 
 // Query DOM for choices and create array with answer buttons
@@ -213,9 +218,6 @@ choices.forEach((choice) => {
     
   });
 });
-
-
-// correctAnswerButton = (choices[rightAnswer - 1]);
 
 // Issues:
 // - choices deselect after giving answer - don't know how to do that
