@@ -67,7 +67,7 @@ function startGame() {
 
 
 function correctAnswer() {
-  console.log('%c Correct answer! ', 'background: #0F0; color: #000')
+  console.log('%c Correct answer! ', 'background: #0F0; color: #000');
   // Play audio to give user feedback for correct answer
   correctSound.play();
   
@@ -96,7 +96,7 @@ function correctAnswer() {
 
 
 function incorrectAnswer() {
-  console.log('%c Wrong answer! ', 'background: #F00; color: #FFF')
+  console.log('%c Wrong answer! ', 'background: #F00; color: #FFF');
   // Play audio to give user feedback for incorrect answer
   incorrectSound.play();
 
@@ -201,6 +201,7 @@ choices.forEach((choice) => {
     
   });
 });
+
 
 // Issues:
 // - choices stays selected on touch devices (can see it in DevTools too)
