@@ -26,32 +26,11 @@ userScore = 0;
 let progress = document.getElementById("progress");
 let width = 0;
 
-// Play audio with pause option
+// Play James Bond Theme
 const music = new Audio("assets/audio/bondtheme.mp3");
 music.volume = 0.4;
-// const good = new Audio("assets/audio/good1.mp3");
-// const wrong = new Audio("assets/audio/wrong1.mp3");
 
-
-const audioFilesGood = [
-    "assets/audio/good1.mp3",
-    "assets/audio/good2.mp3",
-    "assets/audio/good3.mp3",
-    "assets/audio/good4.mp3",
-    "assets/audio/good5.mp3",
-]
-
-const audioFilesWrong = [
-    "assets/audio/wrong1.mp3",
-    "assets/audio/wrong2.mp3",
-    "assets/audio/wrong3.mp3",
-    "assets/audio/wrong4.mp3",
-    "assets/audio/wrong5.mp3",
-    "assets/audio/wrong6.mp3",
-    "assets/audio/wrong7.mp3",
-    "assets/audio/wrong8.mp3",
-]
-
+// Button to toggle pause/play Bond Theme
 const pauseButton = document.getElementById("audioControl");
 pauseButton.addEventListener("click", function () {
   if (music.paused) {
@@ -63,20 +42,54 @@ pauseButton.addEventListener("click", function () {
   }
 });
 
+// Sounds to play when user gives correct answer
+const audioFilesCorrect = [
+    "assets/audio/good1.mp3",
+    "assets/audio/good2.mp3",
+    "assets/audio/good3.mp3",
+    "assets/audio/good4.mp3",
+    "assets/audio/good5.mp3",
+    "assets/audio/good6.mp3",
+    "assets/audio/good7.mp3",
+    "assets/audio/good8.mp3",
+    "assets/audio/good9.mp3",
+    "assets/audio/good10.mp3",
+]
+
+// Sounds to play when user gives incorrect answer
+const audioFilesIncorrect = [
+    "assets/audio/wrong1.mp3",
+    "assets/audio/wrong2.mp3",
+    "assets/audio/wrong3.mp3",
+    "assets/audio/wrong4.mp3",
+    "assets/audio/wrong5.mp3",
+    "assets/audio/wrong6.mp3",
+    "assets/audio/wrong7.mp3",
+    "assets/audio/wrong8.mp3",
+    "assets/audio/wrong9.mp3",
+    "assets/audio/wrong10.mp3",
+]
+
 // Query DOM for choices and create array with answer buttons
 const choices = Array.from(document.getElementsByClassName("choice"));
-let answer1 = document.querySelector('[data-answer="1"]');
-let answer2 = document.querySelector('[data-answer="2"]');
-let answer3 = document.querySelector('[data-answer="3"]');
-let answer4 = document.querySelector('[data-answer="4"]');
 
 function showRules() {
   rulesContainer.classList.remove("hide");
   rulesButton.classList.add("hide");
 }
 
+function startGame() {
+  console.log("Started!");
+  rulesContainer.classList.add("hide");
+  controlsContainer.classList.add("hide");
+  gameContainer.classList.remove("hide");
+  music.play();
+  availableQuestions = [... allQuestions];
+  showQuestion();
+}
+
 function correctAnswer() {
-  good.play();
+  correctSound.play();
   userScore++;
   correctAnswerButton = (choices[rightAnswer - 1]);
   correctAnswerButton.classList.add("correct");
@@ -89,13 +102,14 @@ function correctAnswer() {
     document.body.style.backgroundColor = "inherit";
     document.body.style.backgroundImage = "";
     correctAnswerButton.classList.remove("correct");
-  }, 800);
+  }, 2000);
 }
 
 function incorrectAnswer() {
-  wrong.play();
+  incorrectSound.play();
   correctAnswerButton = (choices[rightAnswer - 1]);
   correctAnswerButton.classList.add("correct");
+
   setTimeout(() => {
     userChoice.classList.add("incorrect");
     document.body.style.background = "#FF5A5A url('assets/images/blood.png') repeat";
@@ -106,31 +120,29 @@ function incorrectAnswer() {
     document.body.style.backgroundImage = "";
     userChoice.classList.remove("incorrect");
     correctAnswerButton.classList.remove("correct");
-  }, 800);
+  }, 2000);
 }
 
-function startGame() {
-  rulesContainer.classList.add("hide");
-  controlsContainer.classList.add("hide");
-  gameContainer.classList.remove("hide");
-  music.play();
-  availableQuestions = [...allQuestions];
-  showQuestion();
-}
+
+
 
 function showQuestion() {
+  console.log("Showing question");
   questionCounter++;
 
-  let randomAudioFileGood = audioFilesGood[Math.floor(Math.random() * audioFilesGood.length)];
-  good = new Audio(randomAudioFileGood);
-  console.log(randomAudioFileGood);
-
-  let randomAudioFileWrong = audioFilesWrong[Math.floor(Math.random() * audioFilesWrong.length)];
-  wrong = new Audio(randomAudioFileWrong);
-  console.log(randomAudioFileWrong);
 
 
+  randomAudioFileCorrect = audioFilesCorrect[Math.floor(Math.random() * audioFilesCorrect.length)];
+  correctSound = new Audio(randomAudioFileCorrect);
 
+
+  
+  // Assign random audio file  from incorrect answer sounds
+  randomAudioFileIncorrect = audioFilesIncorrect[Math.floor(Math.random() * audioFilesIncorrect.length)];
+  incorrectSound = new Audio(randomAudioFileIncorrect);
+
+ 
+  
   // update progress bar display
   width += 10;
   progress.style.width = width + "%";
@@ -144,22 +156,17 @@ function showQuestion() {
   question.innerText = currentQuestion.question;
   
   rightAnswer = currentQuestion.answer;
-  console.log("Correct answer is option " + rightAnswer); 
+  console.log('%c Correct answer is option ', 'background: #222; color: #bada55', rightAnswer); 
   
   choices.forEach((choice) => {
     const optionIndex = choice.dataset.answer;
     choice.innerText = currentQuestion["option" + optionIndex];
   });
-  
-  removeUsedQuestion();
-  // remove shown question from available questions array
-  
-}
 
-function removeUsedQuestion() {
+  // remove used question and feedback sound from the arrays
   availableQuestions.splice(questionIndex, 1);
+  
 }
-
 
 function computeAnswer() {
       userChoice = event.target;
@@ -174,7 +181,7 @@ function computeAnswer() {
         setTimeout(() => {
           correctAnswerButton.classList.remove("correct");
           showQuestion();
-        }, 1000);
+        }, 2000);
       } else {
         // userChoice.classList.add("incorrect");
         // feedback for incorrect answer
@@ -182,7 +189,7 @@ function computeAnswer() {
         setTimeout(() => {
           correctAnswerButton.classList.remove("correct");
           showQuestion();
-        }, 1000);
+        }, 2000);
       }
     gameResult = userScore;
     sessionStorage.setItem("gameresult", gameResult);
@@ -202,7 +209,7 @@ choices.forEach((choice) => {
       return window.location.href = "score.html";
       //return alert("Your score is" + " " + gameResult);
     }
-    console.log(availableQuestions.length);
+    console.log("Questions left " + availableQuestions.length );
     
   });
 });
@@ -216,7 +223,14 @@ choices.forEach((choice) => {
 // - no delay to see if the last 10th question was answered correctly
 
 
+
+
+// FOR README: 
 // random audio array idea --> https://stackoverflow.com/questions/27053633/how-to-make-an-array-of-audio-files-randomly-in-javascript
 // mp3 source --> https://archive.org/details/tvtunes_6995
 // bg png source --> https://www.stickpng.com/
 // local storage --> https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
+// audio files --> https://tuna.voicemod.net/search?search=bond
+// audio files --> https://www.soundboard.com/sb/jamesbond
+// audio files --> https://www.voicy.network/
+// favicon --> https://icons8.com/ 
