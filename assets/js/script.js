@@ -30,7 +30,7 @@ let width = 0;
 const music = new Audio("assets/audio/bondtheme.mp3");
 music.volume = 0.4;
 
-// Button to toggle pause/play Bond Theme
+// Toggle button to pause/play Bond Theme
 const pauseButton = document.getElementById("audioControl");
 pauseButton.addEventListener("click", function () {
   if (music.paused) {
@@ -45,32 +45,48 @@ pauseButton.addEventListener("click", function () {
 // Query DOM for choices and create array with answer buttons
 const choices = Array.from(document.getElementsByClassName("choice"));
 
+
 function showRules() {
   rulesContainer.classList.remove("hide");
   rulesButton.classList.add("hide");
 }
 
+
 function startGame() {
   console.log("Started!");
+  // Hide quiz interface elements in HTML document
   rulesContainer.classList.add("hide");
   controlsContainer.classList.add("hide");
   gameContainer.classList.remove("hide");
+  // Play Audio with Bond Theme
   music.play();
+  // Create new array with all questions to be able to remove used questions
   availableQuestions = [... allQuestions];
   showQuestion();
 }
 
+
 function correctAnswer() {
   console.log('%c Correct answer! ', 'background: #0F0; color: #000')
+  // Play audio to give user feedback for correct answer
   correctSound.play();
+  
+  // Increment user score
   userScore++;
+  
+  // Highlite answer green to give user feedback for correct answer
   correctAnswerButton = (choices[rightAnswer - 1]);
   correctAnswerButton.classList.add("correct");
+
+  //feedback for correct answer
+  score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
   
+  // Show image and change background to green - correct answer!
   setTimeout(() => {
     document.body.style.background = "#007B00 url('assets/images/bond.png') no-repeat center";
   }, 100);
 
+  // Remove visual feedback - apply default style 
   setTimeout(() => {
     document.body.style.backgroundColor = "inherit";
     document.body.style.backgroundImage = "";
@@ -78,17 +94,23 @@ function correctAnswer() {
   }, 2000);
 }
 
+
 function incorrectAnswer() {
   console.log('%c Wrong answer! ', 'background: #F00; color: #FFF')
+  // Play audio to give user feedback for incorrect answer
   incorrectSound.play();
+
+  // Highlite answer green to show user correct answer
   correctAnswerButton = (choices[rightAnswer - 1]);
   correctAnswerButton.classList.add("correct");
 
+  // Show image and change background to red - wrong answer!
   setTimeout(() => {
     userChoice.classList.add("incorrect");
     document.body.style.background = "#FF5A5A url('assets/images/blood.png') repeat";
   }, 100);
 
+  // Remove visual feedback - apply default style  
   setTimeout(() => {
     document.body.style.backgroundColor = "inherit";
     document.body.style.backgroundImage = "";
@@ -98,71 +120,63 @@ function incorrectAnswer() {
 }
 
 
-
-
 function showQuestion() {
-  console.log("Showing question");
+  console.log("Showing random question");
+
+  // Increment question counter
   questionCounter++;
 
+  // Update question counter display
+  counter.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${questionCounter}/10`;
 
-
-  randomAudioFileCorrect = audioFilesCorrect[Math.floor(Math.random() * audioFilesCorrect.length)];
-  correctSound = new Audio(randomAudioFileCorrect);
-
-
-  
-  // Assign random audio file  from incorrect answer sounds
-  randomAudioFileIncorrect = audioFilesIncorrect[Math.floor(Math.random() * audioFilesIncorrect.length)];
-  incorrectSound = new Audio(randomAudioFileIncorrect);
-
- 
-  
-  // update progress bar display
+  // Update progress bar display by 10% for each question
   width += 10;
   progress.style.width = width + "%";
 
-  // update score display
-  counter.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${questionCounter}/10`;
+  // Get random audio file from all "Correct answer" sounds and assign to variable
+  randomAudioFileCorrect = audioFilesCorrect[Math.floor(Math.random() * audioFilesCorrect.length)];
+  correctSound = new Audio(randomAudioFileCorrect);
 
-  // get random question from all questions
+  // Get random audio file from all "Incorrect answer" sounds and assign to variable
+  randomAudioFileIncorrect = audioFilesIncorrect[Math.floor(Math.random() * audioFilesIncorrect.length)];
+  incorrectSound = new Audio(randomAudioFileIncorrect);
+
+  // Get random question from the array with all questions (in questions.js)
   questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
+  // Display question in HTML document
   question.innerText = currentQuestion.question;
-  
+
+  // Show correct answer in the console for developer's easy reference
   rightAnswer = currentQuestion.answer;
   console.log('%c Correct answer is option ', 'background: #222; color: #bada55', rightAnswer); 
   
+  // Insert answer options from the array into the buttons in HTML document 
   choices.forEach((choice) => {
     const optionIndex = choice.dataset.answer;
-    // insert answer options from the array into the buttons in html 
     choice.innerText = currentQuestion["option" + optionIndex];
   });
 
-  // remove used question and feedback sound from the arrays
+  // Remove used question from the array
   availableQuestions.splice(questionIndex, 1);
   
 }
 
+
 function computeAnswer() {
-      userChoice = event.target;
-      userAnswer = userChoice.dataset.answer;
-      
-      
+  // Add event listener for choice buttons (data-answer="x")
+  userChoice = event.target;
+  userAnswer = userChoice.dataset.answer;      
+  
+  // Check if user answer equals correct answer
   if (userAnswer == currentQuestion.answer) {
         correctAnswer();
-        //feedback for correct answer
-        score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
-        
         setTimeout(() => {
-          correctAnswerButton.classList.remove("correct");
           showQuestion();
         }, 2000);
       } else {
-        // userChoice.classList.add("incorrect");
-        // feedback for incorrect answer
         incorrectAnswer();
         setTimeout(() => {
-          correctAnswerButton.classList.remove("correct");
           showQuestion();
         }, 2000);
       }
@@ -174,7 +188,6 @@ function computeAnswer() {
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     
-
     if (availableQuestions.length >= 11) {
       
       computeAnswer();
@@ -190,9 +203,12 @@ choices.forEach((choice) => {
 });
 
 // Issues:
-// - choices deselect after giving answer - don't know how to do that
+// - choices stays selected on touch devices (can see it in DevTools too)
 // - max possible score is 9 instead of 10 
 // - no delay to see if the last 10th question was answered correctly
+// - clicking should be disabled after choice is clicked
+
+
 
 
 
