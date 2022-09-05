@@ -16,7 +16,9 @@ let currentQuestion = {};
 
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
-questionCounter = 0;
+questionCounter = 0; 
+// Allow user to click on the choices
+letUserClick = true; 
 
 // Score
 let userScore = document.getElementById("score");
@@ -159,11 +161,13 @@ function showQuestion() {
 
    // Remove used question from the array
    availableQuestions.splice(questionIndex, 1);
-
+   // Enable buttons so user can pick the choices
+   enableDisableButtons(null, false) 
+   letUserClick = true;
 }
 
 
-function computeAnswer() {
+function computeAnswer(event) {
    // Add event listener for choice buttons (data-answer="x")
    userChoice = event.target;
    userAnswer = userChoice.dataset.answer;
@@ -171,33 +175,51 @@ function computeAnswer() {
    // Check if user answer equals correct answer
    if (userAnswer == currentQuestion.answer) {
       correctAnswer();
-      setTimeout(() => {
-         showQuestion();
-      }, 2000);
    } else {
-      incorrectAnswer();
-      setTimeout(() => {
-         showQuestion();
-      }, 2000);
+      incorrectAnswer(userChoice);
    }
+   
+   setTimeout(() => {
+    showQuestion();
+   }, 2000);
+
+   // Declare variable to store the score in the local storage
    gameResult = userScore;
    sessionStorage.setItem("gameresult", gameResult);
 }
 
+function enableDisableButtons(event, disable = true) {
+   allButtons = document.getElementsByClassName("button choice");
+   for (i=0; i < allButtons.length; i++) {
+      // increasing i by 1 because of the index
+      if (disable) {
+         if ((i + 1).toString() !== event.target.dataset.answer) {
+            // disable the rest of the buttons
+            allButtons[i].setAttribute("disable", "");
+         }
+      }
+      else {
+         allButtons[i].removeAttribute("disable");
+      }
+   }
+}
+
 
 choices.forEach((choice) => {
-   choice.addEventListener("click", () => {
-
-      if (availableQuestions.length >= 11) {
-
-         computeAnswer();
-
-      } else {
-
-         return window.location.href = "score.html";
-         //return alert("Your score is" + " " + gameResult);
+   choice.addEventListener("click", (event) => {
+      // In case the user clicks again, check for disable attribute
+      if (letUserClick && event.target.getAttribute("disable") !== '') {
+         enableDisableButtons(event);
+         // Taking a sample of 10/20 questions
+         // TODO This needs to be moved to showQuestions
+         if (availableQuestions.length <= 9) {
+            // Show the "Show Score Button"
+            return window.location.href = "score.html";
+         } 
+         computeAnswer(event);
+         console.log("Questions left in the array: " + availableQuestions.length);
       }
-      console.log("Questions left in the array: " + availableQuestions.length);
+      letUserClick = false
 
    });
 });
