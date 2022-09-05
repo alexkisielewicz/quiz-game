@@ -23,8 +23,8 @@ let userScore = document.getElementById("score");
 userScore = 0;
 
 // Progress bar
-let progress = document.getElementById("progress");
-let width = 0;
+const progress = document.getElementById("progress");
+let progressBarWidth = 0;
 
 // Play James Bond Theme
 const music = new Audio("assets/audio/bondtheme.mp3");
@@ -129,10 +129,10 @@ function showQuestion() {
    // Update question counter display
    counter.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${questionCounter}/10`;
 
-   // Update progress bar display by 10% for each question
-   width += 10;
-   progress.style.width = width + "%";
-
+   // Update progress bar display by 10% for each questione
+   progressBarWidth += 10;
+   progress.style.width = progressBarWidth + "%";
+   
    // Get random audio file from all "Correct answer" sounds and assign to variable
    randomAudioFileCorrect = audioFilesCorrect[Math.floor(Math.random() * audioFilesCorrect.length)];
    correctSound = new Audio(randomAudioFileCorrect);
