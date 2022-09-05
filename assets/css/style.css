@@ -83,13 +83,24 @@ h2 {
 	width: 90%;
 }
 
-.button:hover {
+/* .button:hover {
 	color: #FFF;
 	background-color: #A88D64;
 	border: 2px solid #FFF;
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 	transition: transform 100ms;
 	transform: scale(1.01);
+} */
+
+@media (hover: hover) {
+	button:hover {
+		color: #FFF;
+		background-color: #A88D64;
+		border: 2px solid #FFF;
+		box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+		transition: transform 100ms;
+		transform: scale(1.01);
+	}
 }
 
 .button-start {
@@ -109,6 +120,11 @@ h2 {
 	background-color: #FFD700;
 	font-weight: bold;
 	border: 2px solid #787D83;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 #rules {
