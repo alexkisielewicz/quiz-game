@@ -77,7 +77,7 @@ function correctAnswer() {
    // Highlite answer green to give user feedback for correct answer
    correctAnswerButton = (choices[rightAnswer - 1]);
    correctAnswerButton.classList.add("correct");
-
+   
    //feedback for correct answer
    score.innerHTML = `${userScore} <i class="fa-solid fa-star"></i>`;
 
@@ -153,7 +153,7 @@ function showQuestion() {
 
    // Insert answer options from the array into the buttons in HTML document 
    choices.forEach((choice) => {
-      const optionIndex = choice.dataset.answer;
+      optionIndex = choice.dataset.answer;
       choice.innerText = currentQuestion["option" + optionIndex];
    });
 
