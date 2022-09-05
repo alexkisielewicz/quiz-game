@@ -1,5 +1,3 @@
-console.log("Sounds loaded!");
-
 // Sounds to play when user gives correct answer
 const audioFilesCorrect = [
     "assets/audio/good1.mp3",

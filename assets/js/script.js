@@ -17,7 +17,7 @@ let currentQuestion = {};
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0; 
-// Allow user to click on the choices
+// Allow user to click on the choices depending on this Boolean variable value 
 letUserClick = true; 
 
 // Score
@@ -28,7 +28,7 @@ userScore = 0;
 const progress = document.getElementById("progress");
 let progressBarWidth = 0;
 
-// Play James Bond Theme
+// Assignement of James Bond Theme audio file to the variable
 const music = new Audio("assets/audio/bondtheme.mp3");
 music.volume = 0.4;
 
@@ -47,7 +47,9 @@ pauseButton.addEventListener("click", function () {
 // Query DOM for choices and create array with answer buttons
 const choices = Array.from(document.getElementsByClassName("choice"));
 
-
+/**
+ * This function is called to hide "Rules" and "Start" buttons when user starts the quiz. 
+ */
 function showRules() {
    rulesContainer.classList.remove("hide");
    rulesButton.classList.add("hide");
@@ -69,11 +71,20 @@ function startGame() {
    showQuestion();
 }
 
+/** 
+ * This function returns random audio file depends on called parameter - from "correct" sounds or from "incorrect" sounds array. Files are assigned in sounds.js file. 
+ */
+function getAudio(audioFiles) {
+return audioFiles[Math.floor(Math.random() * audioFiles.length)];
+}
+
 /**
  * The function is called when user gives correct answer. It increments the score and gives user feedback by playing the sound and changing body background and button colour in the DOM. After short delay it brings back the default style of a document.   
  */
 function correctAnswer() {
    console.log('%c Correct answer! ', 'background: #0F0; color: #000');
+   
+   
    // Play audio to give user feedback for correct answer
    correctSound.play();
 
@@ -143,15 +154,11 @@ function showQuestion() {
    progressBarWidth += 10;
    progress.style.width = progressBarWidth + "%";
    
-   // Get random audio file from all "Correct answer" sounds and assign to variable
-   randomAudioFileCorrect = audioFilesCorrect[Math.floor(Math.random() * audioFilesCorrect.length)];
-   correctSound = new Audio(randomAudioFileCorrect);
-   console.log("random CORRECT audio file to be played: " + randomAudioFileCorrect);
+   // Assign variable with correct answer sound randomly generated using getAudio() function
+   correctSound = new Audio(getAudio(audioFilesCorrect));
 
-   // Get random audio file from all "Incorrect answer" sounds and assign to variable
-   randomAudioFileIncorrect = audioFilesIncorrect[Math.floor(Math.random() * audioFilesIncorrect.length)];
-   incorrectSound = new Audio(randomAudioFileIncorrect);
-   console.log("random INCORRECT audio file to be played: " + randomAudioFileIncorrect);
+   // Assign variable with incorrect answer sound randomly generated using getAudio() function
+   incorrectSound = new Audio(getAudio(audioFilesIncorrect));
 
    // Get random question from the array with all questions (in questions.js)
    questionIndex = Math.floor(Math.random() * availableQuestions.length);
