@@ -59,6 +59,7 @@ h1 {
 	color: #000;
 	font-family: 'SkyFall Done Regular';
 	font-size: 3rem;
+  margin: 5px;
 }
 
 h2 {
@@ -247,6 +248,12 @@ footer {
 	margin-bottom: 10px;
 }
 
+#playAgain {
+    font-size: 1.25rem;
+    margin-bottom: 0px;
+    padding: 15px;
+  }
+
 .social-icons:hover {
 	color: #FFD700;
 }
@@ -362,7 +369,7 @@ footer {
     width: 80%;
     margin: 0 auto;
   }
-}
+} 
 
 /* Medium devices (tablets, bigger than 768 px but less than 992px) */
 @media only screen and (min-width: 768px) and (max-width: 991.98px) {
