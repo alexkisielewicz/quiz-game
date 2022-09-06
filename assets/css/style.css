@@ -127,7 +127,7 @@ h2 {
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
-#rules>ul {
+#rules > ul {
 	list-style-position: outside;
 	list-style-image: url('../images/bullet.png');
 }
@@ -280,8 +280,12 @@ footer {
 	}
 
 	.button-start {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
+
+  .button {
+    font-size: 1rem;
+  }
 
 	#question,
 	.interface-icons {
@@ -304,8 +308,94 @@ footer {
 }
 }
 
-/* Tablets, up to 768px
-@media only screen and (min-width: 576px) and (max-width: 767.98px) {}
+/* Tablets, up to 768px */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+  
+  #game {
+    width: 80%; 
+  }
+
+  h1 {
+		color: #000;
+		font-family: 'SkyFall Done Regular';
+		font-size: 1.75rem;
+	}
+
+	h2 {
+		font-family: 'SkyFall Done Regular';
+		font-size: 1rem;
+	}
+
+	#rules {
+		width: 90%;
+		font-size: 1rem;
+	}
+
+  .interface-icons,
+	.interface-main-text {
+		margin: 5px;
+	}
+
+  .button {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+	.button-start {
+		font-size: 1rem;
+	}
+
+  .endgame-image {
+    width: 40%;
+    height: auto;
+  }
+
+  #endgame {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
 
 /* Medium devices (tablets, bigger than 768 px but less than 992px) */
-/* @media only screen and (min-width: 768px) and (max-width: 991.98px) {} */
+@media only screen and (min-width: 768px) and (max-width: 991.98px) {
+  #game {
+    width: 80%; 
+  }
+
+  h1 {
+		color: #000;
+		font-family: 'SkyFall Done Regular';
+		font-size: 1.75rem;
+	}
+
+	h2 {
+		font-family: 'SkyFall Done Regular';
+		font-size: 1rem;
+	}
+
+	#rules {
+		width: 90%;
+		font-size: 1rem;
+	}
+
+  .button {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+	.button-start {
+		font-size: 1rem;
+	}
+
+  .endgame-image {
+    width: 40%;
+    height: auto;
+  }
+
+  #endgame {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
