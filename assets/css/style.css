@@ -171,14 +171,19 @@ li {
 
 #endgame {
 	width: 100%;
-	background-color: lightgray;
+	background-color: rgb(211, 211, 211);
 	padding: 10px;
 	border-radius: 1rem;
+  box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
 .quiz-result {
 	color: #000;
 	font-size: 3rem;
+}
+
+.max-score {
+  color: #080;
 }
 
 .hide {
@@ -292,7 +297,11 @@ footer {
 	.endgame-image {
 		width: 50%;
 		height: auto;
-	}
+  }
+
+  #playAgain {
+    font-size: 1rem;
+}
 }
 
 /* Tablets, up to 768px
