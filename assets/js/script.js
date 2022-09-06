@@ -83,13 +83,19 @@ return audioFiles[Math.floor(Math.random() * audioFiles.length)];
  */
 function correctAnswer() {
    console.log('%c Correct answer! ', 'background: #0F0; color: #000');
-   
+
+   // Assign variable with correct answer sound randomly generated using getAudio() function
+   correctSound = new Audio(getAudio(audioFilesCorrect));
    
    // Play audio to give user feedback for correct answer
    correctSound.play();
 
-   // Increment user score
+  // Increment user score
    userScore++;
+
+   // Declare variable to store the score in the local storage
+   gameResult = userScore;
+   sessionStorage.setItem("gameresult", gameResult);
 
    // Highlite answer green to give user feedback for correct answer
    correctAnswerButton = (choices[rightAnswer - 1]);
@@ -116,6 +122,10 @@ function correctAnswer() {
  */
 function incorrectAnswer() {
    console.log('%c Wrong answer! ', 'background: #F00; color: #FFF');
+
+   // Assign variable with incorrect answer sound randomly generated using getAudio() function
+   incorrectSound = new Audio(getAudio(audioFilesIncorrect));
+   
    // Play audio to give user feedback for incorrect answer
    incorrectSound.play();
 
@@ -154,12 +164,6 @@ function showQuestion() {
    progressBarWidth += 10;
    progress.style.width = progressBarWidth + "%";
    
-   // Assign variable with correct answer sound randomly generated using getAudio() function
-   correctSound = new Audio(getAudio(audioFilesCorrect));
-
-   // Assign variable with incorrect answer sound randomly generated using getAudio() function
-   incorrectSound = new Audio(getAudio(audioFilesIncorrect));
-
    // Get random question from the array with all questions (in questions.js)
    questionIndex = Math.floor(Math.random() * availableQuestions.length);
    currentQuestion = availableQuestions[questionIndex];
@@ -176,6 +180,11 @@ function showQuestion() {
       optionIndex = choice.dataset.answer;
       choice.innerText = currentQuestion["option" + optionIndex];
    });
+
+   if (availableQuestions.length <= 10) {
+            //alert("Your score is: " + userScore);
+            return window.location.href = "score.html";
+         } 
 
    // Remove used question from the array
    availableQuestions.splice(questionIndex, 1);
@@ -202,10 +211,6 @@ function computeAnswer(event) {
    setTimeout(() => {
     showQuestion();
    }, 2000);
-
-   // Declare variable to store the score in the local storage
-   gameResult = userScore;
-   sessionStorage.setItem("gameresult", gameResult);
 }
 
 /** 
@@ -239,12 +244,10 @@ choices.forEach((choice) => {
       if (letUserClick && event.target.getAttribute("disable") !== '') {
          enableDisableButtons(event);
          console.log("Score is: " + userScore);
+         
          // Taking a sample of 10/20 questions
          // TODO This needs to be moved to showQuestions
-         if (availableQuestions.length == 10) {
-            alert("Your score is: " + userScore);
-            //return window.location.href = "score.html";
-         } 
+         
          computeAnswer(event);
          console.log("Questions left in the array: " + availableQuestions.length);
       }
