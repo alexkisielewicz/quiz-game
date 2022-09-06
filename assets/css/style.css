@@ -292,10 +292,11 @@ footer {
 	#question {
     font-size: 1rem;
     width: 100%;
+    margin-bottom: 15px;
   }
 
 	.interface-icons {
-		font-size: 1rem;
+		font-size: 1.25rem;
 		margin-bottom: 5px;
 	}
 
