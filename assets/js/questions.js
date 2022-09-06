@@ -119,10 +119,10 @@ const allQuestions = [
 
   {
     question: "What was the only Bond theme song to reach No. 1 on the U.S. Billboard chaarts?", 
-    option1: "Carly Simon's 'Nobody Does it Better'", 
-    option2: "Duran Duran's 'A View to a Kill'", 
-    option3: "Paul Mc Cartney's 'Live and Let Die'",
-    option4: "Adele's 'Skyfall'",
+    option1: "Carly Simon's \"Nobody Does it Better\"", 
+    option2: "Duran Duran's \"A View to a Kill\"", 
+    option3: "Paul Mc Cartney's \"Live and Let Die\"",
+    option4: "Adele's \"Skyfall\"",
     answer: 2
   },
 
