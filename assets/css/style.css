@@ -251,11 +251,13 @@ footer {
 	color: #FFD700;
 }
 
-/* X-small devices, phones in portrait mode 576px*/
+/* Small devices, phones in portrait mode 576px*/
 @media (max-width: 575.98px) {
 
 	.outer-container {
-		width: 90%;
+		width: 100%;
+    border: 1px solid limegreen;
+    padding: 0px;
 	}
 
 	.progress-bar-outer {
@@ -285,11 +287,16 @@ footer {
 
   .button {
     font-size: 1rem;
+    padding: 15px;
   }
 
-	#question,
+	#question {
+    font-size: 1rem;
+    width: 100%;
+  }
+
 	.interface-icons {
-		font-size: 1.25rem;
+		font-size: 1rem;
 		margin-bottom: 5px;
 	}
 
