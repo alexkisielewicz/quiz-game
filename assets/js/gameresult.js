@@ -1,18 +1,15 @@
-console.log("Hello from gameresult.html")
-
 // Assign variable with audio and play it
-const surprise = new Audio("assets/audio/surprise.mp3");
-surprise.play();
+const quizResultSound = new Audio("assets/audio/surprise.mp3");
+quizResultSound.play();
 
 // Read user score saved in local storage and asssign it to variable
 const gameresult = sessionStorage.getItem("gameresult");
-console.log("Your score is " + gameresult);
 
-// Query DOM 
+// Query DOM to get "play again" button and add event listener
 const playAgain = document.getElementById("playAgain");
-playAgain.innerText = "Play Again";
+playAgain.addEventListener("click", replay);
 
-// Query DOM and display game result in HTML document
+// Query DOM and display text in html document depending on score value
 result = document.getElementById("result");
 
 if (gameresult === "10") {
@@ -22,3 +19,9 @@ if (gameresult === "10") {
   result.innerHTML = `You scored<br> <span class="quiz-result">${gameresult}</span><br> points`
 }; 
 
+/**
+ * This function takes user back to index.html where he can play quiz again
+ */
+function replay() {
+  return window.location.href = "index.html";
+};
