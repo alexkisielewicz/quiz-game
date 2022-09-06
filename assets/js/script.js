@@ -18,7 +18,7 @@ let currentQuestion = {};
 let questionCounter = document.getElementById("questionCounter");
 questionCounter = 0; 
 // Allow user to click on the choices depending on this Boolean variable value 
-letUserClick = true; 
+let letUserClick = true; 
 
 // Score
 let userScore = document.getElementById("score");
@@ -59,7 +59,6 @@ function showRules() {
  * This function iniciate the game by hiding the buttons from the main screen and showing game interface, qustion and answers. It also plays audio and creates new array with all questions. 
  */
 function startGame() {
-   console.log("Started!");
    // Hide quiz interface elements in HTML document
    rulesContainer.classList.add("hide");
    controlsContainer.classList.add("hide");
@@ -75,15 +74,14 @@ function startGame() {
  * This function returns random audio file depends on called parameter - from "correct" sounds or from "incorrect" sounds array. Files are assigned in sounds.js file. 
  */
 function getAudio(audioFiles) {
-return audioFiles[Math.floor(Math.random() * audioFiles.length)];
+  // Used well known method to get random array index - https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
+  return audioFiles[Math.floor(Math.random() * audioFiles.length)];
 }
 
 /**
  * The function is called when user gives correct answer. It increments the score and gives user feedback by playing the sound and changing body background and button colour in the DOM. After short delay it brings back the default style of a document.   
  */
 function correctAnswer() {
-   console.log('%c Correct answer! ', 'background: #0F0; color: #000');
-
    // Assign variable with correct answer sound randomly generated using getAudio() function
    correctSound = new Audio(getAudio(audioFilesCorrect));
    
@@ -121,11 +119,9 @@ function correctAnswer() {
  * The function is called when user gives incorrect answer. It gives user feedback by playing the sound and changing body background and button colour in the DOM. After short delay it brings back the default style of a document.
  */
 function incorrectAnswer() {
-   console.log('%c Wrong answer! ', 'background: #F00; color: #FFF');
-
    // Assign variable with incorrect answer sound randomly generated using getAudio() function
    incorrectSound = new Audio(getAudio(audioFilesIncorrect));
-   
+
    // Play audio to give user feedback for incorrect answer
    incorrectSound.play();
 
@@ -152,7 +148,10 @@ function incorrectAnswer() {
  * Function is called to display the question in HTML document. It gets the random question from the array with all questions and inserts it in the quiz interface together with four answers. The question is removed from the array after user gives the answer. It also changes the width of progress bar in the quiz interface.  
  */
 function showQuestion() {
-   console.log("Showing random question");
+  if (availableQuestions.length <= 10) {
+     //alert("Your score is: " + userScore);
+     return window.location.href = "score.html";
+     } 
 
    // Increment question counter
    questionCounter++;
@@ -163,17 +162,18 @@ function showQuestion() {
    // Update progress bar display by 10% for each questione
    progressBarWidth += 10;
    progress.style.width = progressBarWidth + "%";
+
+    
    
    // Get random question from the array with all questions (in questions.js)
+   // Used well known method to get random array index - https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
    questionIndex = Math.floor(Math.random() * availableQuestions.length);
    currentQuestion = availableQuestions[questionIndex];
    // Display question in HTML document
    question.innerText = currentQuestion.question;
 
-   // Show correct answer in the console for developer's easy reference
-   // TODO: remove this before release
+   // Assign variable to store correct answer read from the object  
    rightAnswer = currentQuestion.answer;
-   console.log('%c Correct answer is option ', 'background: #222; color: #bada55', rightAnswer);
 
    // Insert answer options from the array into the buttons in HTML document 
    choices.forEach((choice) => {
@@ -181,15 +181,10 @@ function showQuestion() {
       choice.innerText = currentQuestion["option" + optionIndex];
    });
 
-   if (availableQuestions.length <= 10) {
-            //alert("Your score is: " + userScore);
-            return window.location.href = "score.html";
-         } 
-
    // Remove used question from the array
    availableQuestions.splice(questionIndex, 1);
    // Enable buttons so user can pick the choices
-   enableDisableButtons(null, false) 
+   enableDisableButtons(null, false); 
    letUserClick = true;
 }
 
@@ -232,7 +227,7 @@ function enableDisableButtons(event, disable = true) {
          allButtons[i].removeAttribute("disable");
       }
    }
-};
+}
 
 /** 
  * For each method is used to add event listeners for user clicks on the choices. If buttons are enabled it disables them after user click. This prevents user from clicking on other choices and displaying feedback multiple times. There are 20 questions in the array and user answers 10 random questions. When user answers the last tenth question the quiz ends and score button is displayed.    
@@ -243,16 +238,8 @@ choices.forEach((choice) => {
       // In case the user clicks again, check for disable attribute
       if (letUserClick && event.target.getAttribute("disable") !== '') {
          enableDisableButtons(event);
-         console.log("Score is: " + userScore);
-         
-         // Taking a sample of 10/20 questions
-         // TODO This needs to be moved to showQuestions
-         
          computeAnswer(event);
-         console.log("Questions left in the array: " + availableQuestions.length);
       }
-
-      letUserClick = false
-
+      letUserClick = false;
    });
 });
