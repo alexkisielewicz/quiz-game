@@ -104,7 +104,7 @@ function correctAnswer() {
 
    // Show image and change background to green - correct answer!
    setTimeout(() => {
-      document.body.style.background = "#007B00 url('assets/images/bond.png') no-repeat center";
+      document.body.style.background = "#007B00 url('assets/images/bond.webp') no-repeat center";
    }, 100);
 
    // Remove visual feedback - apply default style 
