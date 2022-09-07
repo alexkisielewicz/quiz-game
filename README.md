@@ -14,18 +14,18 @@ ABOUT THE QUIZ - PLACEHOLDER TEXT
 
 # Table of content 
 
-*   [PROJECT](#project)
+*   [Project](#project)
     *   [Strategy/Scope](#strategyscope)
     *   [Site owner goals](#site-owner-goals)
     *   [Site user goals](#user-goals)
-*   [USER EXPERIENCE (UX)](#user-experience-ux)
+*   [User Experience (UX/UI)](#user-experience-ux)
     *   [Color Scheme](#colour-scheme)
     *   [Typography](#typography)
     *   [Structure](#structure)
-*   [TECHNOLOGY](#technology)
+*   [Technology](#technology)
     *   [Languages used](#languages-used)
     *   [Frameworks, libraries & software used](#languages-used)
-*   [TESTING](#testing)
+*   [Testing](#testing)
     *   [Accessibility](#accessibility)
     *   [Performance](#performance)
     *   [Validation](#validation)
@@ -35,8 +35,8 @@ ABOUT THE QUIZ - PLACEHOLDER TEXT
     *   [Platforms/devices](#platformsdevices)
     *   [Bugs/known issues](#bugsknown-issues)
     *   [Responsiveness](#responsiveness)
-*   [DEPLOYMENT](#deployment)
-*   [CREDITS](#credits)
+*   [Deployment](#deployment)
+*   [Credits](#credits)
     *   [Code](#code)
     *   [Media](#media)
     *   [Acknowledgements](#acknowledgements)
@@ -104,22 +104,27 @@ To achieve the strategy goals I implemented following features:
 
 ##  Colour Scheme
 
-Colour palette was selected using coolors.co generator. 
-For beast readability and clean look white colour was chosen for the bacgkround, "Black Chocolate #272722" for text. I chose "Light Salmon #FF9F76" colour for hover, buttons and navigation elements to stand out and delicate "Miami Pink #FFD9EA" for sections background. "French Bistre #7A6D5B" colour was used for text in the footer. "Light Gray #D0D2D6" was used for boxes shadow effect and form input hover.   
+Colour palette was selected using <b>coolors.co</b> generator and has been extracted from the frame comming from the film "Skyfall". The number of colours used has been reduced as there was no need for all of them.
 
-![Colour Scheme](docs/yoga_studio_color_palette.png)
+For best readability and clean look white colour was chosen for the bacgkround of the quiz-rules and the buttons, hex colour #51301C was chosen for the text. I chose "gold #FFD700" colour for hover effect for the buttons on the start screen and user interface elements such as progress bar, question counter, audio controls and score counter. Light gray colour was selected as a background that fills "the barrel". Depending on the answer, user is given a feedback for correct and incorrect answer. Barrel background colour changes colour to green and red respectively. Also correct and incorrect answers are highlited in the same style to provide visual feedback.  
+
+![Colour Scheme](docs/design_colourpalette_1.jpg)
+
+![Colour Scheme](docs/design_colourpalette_2.png)
 
 <br>
 
 ##  Typography
 
--   The Raleway font is the main font used throughout the whole website with Sans Serif as the fallback.The Raleway is a clean, modern looking font and is attractive. It is sourced from [Google fonts](https://fonts.google.com/specimen/Raleway) and it's linked to css document via @import.  
+-   The <b>Merriweather</b> font is the font used throughout the whole website with Serif as the fallback. The Merriweather is a clean, modern looking font and is attractive. It is sourced from [Google fonts](https://fonts.google.com/specimen/Merriweather) and it's linked to css document via @import. 
 
-![Google fonts](docs/raleway_font.png)
 
-- [Type Scale](https://type-scale.com/) - tool were used to visualize different font sizes.
+![Google fonts](docs/design_typography_merriweather.png)
 
-![Type Scale](docs/typescale.png)
+-   <b>Skyfall Done</b> is another font used in the project. It's style has been used in the graphics related to "Skyfall" Bond film and it's associated with recent films from the Bond series. It is sourced from [Cufonfonts.com](https://www.cufonfonts.com/font/skyfall-done) and it's served to the html document remotely from web server as The Web Open Font Format (WOFF) via @font-face CSS rule.
+The font is used on the quiz main screen (the header and the buttons) and also at the end of the quiz on score page and 404 page.   
+
+![Skyfall Done](docs/design_typography_skyfall.png)
 
 <br>
 
@@ -127,76 +132,55 @@ For beast readability and clean look white colour was chosen for the bacgkround,
 
 ### Wireframes - [View all wireframes - PDF file](https://github.com/alexkisielewicz/Portfolio-Project-1/tree/main/docs/yoga_studio_portfolio_project_1.pdf)
 
-
-
 Page is designed in well known scrolling page style that users like. It provides fast access to information and immerses user in the story. Navigation bar is always visible in the viewport, that reduces number of clicks to reach desirable content. Website consists of following sections: 
 
-## Navbar 
+## Start screen 
 
-The navigation bar is customised Bootstrap Navbar. It contains custom logo made using Adobe Express on-line tool and 7 links to relevant sections. All menu elements are highlighted on hover and navbar is sticked to the top of the viewport when scrolling. On small screens navbar shows well-known "hamburger" icon and collapsible menu. 
+DESCRIPTION PLACEHOLDER 
 
-![Navbar](docs/screenshot_navbar.png) 
+DESCRIPTION PLACEHOLDER
 
-## Carousel
+![Start screen](docs/features_start.png)
 
-Bootstrap carousel shows 3 slides with photos that cover whole viewport on big screens. Each caption consists of Header, short slogan and call-to-action button that is linked to relevant key section. Carousel slides cycle through automaticaly but site user can take control over this function thanks to slider buttons and active slide indicator.  
+DESCRIPTION PLACEHOLDER
 
-![Carousel](docs/screenshot_carousel.png)
+![Rules](docs/features_rules.png)
 
-## About
-The About section is descriptive part of a website and provides information about company's goal and purpose. It also promotes yoga as activity that brings healt benefits to the user. The business key points are presented using row of icons. Use of negative space make it easy for user to read the content and focus on important parts. 
+## Controls
 
-![About](docs/screenshot_about.png)
+DESCRIPTION PLACEHOLDER
 
-## Timetable
-Timetable section contains of a table presenting information about weekly activities in the studio. The classes are cetagorised in gour levels: intro, beginner, advanced and pregnancy. The cells of each category are highlited in different colour. The table is scrollable horizontaly on smaller screens. Underneath the table there is call-to-action button linked to class booking form.     
+![Controls](docs/features_controls.png)
 
-![Timetable](docs/screenshot_timetable.png)
+## Question 
 
-## Learn
-In this section there is a short decription of company's offer. Bootstrap accordion feature has been used to accomodate five headers and paragpraphs describing different yoga styles and offered classes. For those who are looking for on-line learning resources, there are two categories of lessons - for beginner and advanced user. I imagine that full content of articles and video lessons would be available on those sub pages.     
+DESCRIPTION PLACEHOLDER
 
-![Learn](docs/screenshot_learn.png)
+![Question](docs/features_question.png)
 
-## Instructors
-This section presents photo avatars of yoga instructors working in Yoga Studio. Sup pages would present full silhouettes of each instructor. 
+## Feedback for correct and incorrect answer
 
-![Instructors](docs/screenshot_instructors.png)
+DESCRIPTION PLACEHOLDER
 
-## Gallery
-The image gallery contains visually consistent and eye-pleasing photographs that provide user an insight of how Yoga Studio looks like and what is the "vibe" in there. Photo grid is made of 5 columns by 3 pictures in each column. It takes all viewport width and is responsive on all devices. On a smaller screens up to 600px wide, a single photo takes all screen width. The grid layout idea was inspired by tutorial found on [w3cschhols.com](https://www.w3schools.com/howto/howto_js_image_grid.asp) 
-
-![Gallery](docs/screenshot_gallery.png)
-
-## Quote
-
-The "Quote of the day" section displays a yoga related quote that should motivate user, attract him to yoga or persuade him to make a contact or booking.  
-
-![Quote](docs/screenshot_quote.png)
-
-## Youtube video
-Video section presents full width iframe that contains YouTube video with relevant content. It links the user with business's YouTube channel and encourage him to interact longer with the content and build deeper interest in yoga and as a result - to become new customer. 
-
-![Youtube](docs/screenshot_youtube.png)
-
-## "Sign-in" - booking form
-The booking form is a key point of a website where user is being led consequently to make interaction and join the business as a new customer. All form fields are marked as required and are validated. The form provides feedback in case the users input is incorrect. Date select field requires further script to prevent user from picking a date from the past. Upon successful completion of the form website provides user a feedback by transfering him to thankyou.html page.    
-
-![Booking](docs/screenshoot_booking.png)
+![Feedback](docs/features_feedback.jpg)
 
 ## Footer
-The classic footer is preceded by Google Map section that indicated precise location of Yoga Studio. The footer contains of three columns, that provides information accordingly about address, contact and opening hours. The last column presents social media icons that encourage user to follow the business on various platforms. In bottom right corner of a website is  located an icon with "back to top" link.    
 
-![Footer](docs/screenshot_footer.png)
+ DESCRIPTION PLACEHOLDER
 
-## Thank you page
-The page where user is transferred to upon successful completion of the booking form. User doesn't have to use browser "go back" button, the link to the main page is provided.      
+![Footer](docs/features_footer.png)
 
+## Score page
 
-![Thankyou](docs/screenshoot_thankyou.png)
+DESCRIPTION PLACEHOLDER
+
+![Footer](docs/features_endgame_1.png)
+
+![Footer](docs/features_endgame_2.png)
+
 
 ## HTTP 404 Page
-An error page in case that user tries to open a website that cannot be found on the web server. User doesn't have to use browser "go back" button, the link to the main page is provided.      
+An error page in case that user tries to open a website that cannot be found on the web server. User doesn't have to use browser "go back" button, the link to the main page is provided.
 
 ![404](docs/features_404.png)
 
@@ -208,62 +192,43 @@ An error page in case that user tries to open a website that cannot be found on 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-   [Markdown](https://en.wikipedia.org/wiki/Markdown) - markup language used to write this document.
     
 ##  [Frameworks, libraries & software used](#languages-used)
 
-- [Bootstrap 5.2.0:](https://getbootstrap.com) - Bootstrap was used to create website grid and to make it responsive. Other features used and customised: 
-    * Navbar,
-    * Carousel,
-    * Acordion,
-    * Shortcode for spacing elements and table cell background colour (eg. px-5, warning). 
 - [Balsamiq](https://balsamiq.com/) - Balsamiq was used to create the [wireframes](#structure) during the design process.
 
 - [Coolors.co](https://coolors.co/) - was used to create color palette. 
 
-- [Google Fonts](https://fonts.google.com/specimen/Raleway) - Google fonts were used to import the 'Raleway' font into the style.css file which is used on all pages throughout the project.
-
-- [Type Scale](https://type-scale.com/) - a type tool used to visualize font size. 
-
-- [Google Maps](https://www.google.com/maps) - was used to embed map with Yoga Studio location. 
-
-- [YouTube](https://www.youtube.com) - was used to embed video on a website. 
+- [Google Fonts](https://fonts.google.com/specimen/Merriweather) - Google fonts were used to import the 'Merriweather' font into the style.css file which is used on all pages throughout the project.
 
 - [Font Awesome:](https://fontawesome.com/) - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
 - [Git](https://git-scm.com/) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
-- [GitPod](https://www.gitpod.io) - IDE used to code the project. 
-
-- [Visual Studio Code for Windows](https://code.visualstudio.com/) - IDE used to code the project.  
-
 - [GitHub](https://github.com/) - GitHub is used to store the project's code after being pushed from Git.
 
-- [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) - Photoshop was used to resize the pictures. 
+- [GitPod](https://www.gitpod.io) and [Visual Studio Code for Windows](https://code.visualstudio.com/) - IDE used to code the project. 
 
-- [Adobe Express](https://express.adobe.com/) - online service used to create logo. 
+- [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) - Photoshop was used to resize and crop the pictures. 
 
-- [Audioeye.com](https://www.audioeye.com/color-contrast-checker) - used to analyse contrast. 
+- [Audioeye.com](https://www.audioeye.com/color-contrast-checker) - used to analyse text/background contrast. 
 
-- [BD_sizer](https://bd-sizer.en.softonic.com/) - used for resizeing pictures in the gallery.
+- [TinyPNG](https://tinypng.com/) - used for png files compression.
 
-- [TinyPNG](https://tinypng.com/) - used for images compression.
+- [Convertio.co](https://convertio.co/jpg-webp/) - used to convert images to next-gen *.webp format  
 
-- [Convertio.co](https://convertio.co/jpg-webp/) - online JPG to WEBP converter. 
-
-- [CSS Beautifier](https://www.freeformatter.com/css-beautifier.html) - used for formatting css file for optimal readability. 
+- [Free Formatter](https://www.freeformatter.com/) - used for formatting html and css documents for optimal readability.  
 
 - [Am I Responsive](https://ui.dev/amiresponsive) - online tool used to create mockup to present responsive design of this project. 
 
-- [Go Full Page](https://gofullpage.com/) - Google Chrome extension used to capture full page screen shot.  
-
 - [Lightshot](https://app.prntscr.com/) - Google Chrome extension used to capture screenshots for this README document. 
 
-- [Lighthouse](https://developers.google.com/web) - Google webdev tool used for performance testing. 
+- [Lighthouse](https://developers.google.com/web) - Google WebDev tool used for performance/accesibility testing.  
 
-- [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - used to validate accessibility. 
+- [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - used to test accessibility of the webpage. 
 
 - [Favicon.io](https://www.favicon.io) - tool used to create favicon. 
-
 
 <br>
 
