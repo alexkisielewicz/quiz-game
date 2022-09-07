@@ -1,51 +1,31 @@
-// Issues:
-// - choices stays selected on touch devices (can see it in DevTools too)
-// - max possible score is 9 instead of 10 
-// - no delay to see if the last 10th question was answered correctly
-// - clicking should be disabled after choice is clicked
-
-
-// FOR README: 
-// mp3 source --> https://archive.org/details/tvtunes_6995
-// local storage --> https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
-// audio files --> https://tuna.voicemod.net/search?search=bond
-// audio files --> https://www.soundboard.com/sb/jamesbond
-// audio files --> https://www.voicy.network/
-// favicon --> https://icons8.com/
-// randomIndex --> https://stackoverflow.com/questions/5915096/get-a-random-item-from-a-javascript-array
-
-
-
 <h1 align="center">James Bond Quiz Game - JavaScript Project</h1>
 
 ### Developer: Aleksander Kisielewicz
 
 ![Am I Responsive](docs/mockup_responsiveness.png)
 
-[View live website here](https://alexkisielewicz.github.io/Portfolio-Project-1/) :computer:
+<span style="color: green;"><b>[View live website here](https://alexkisielewicz.github.io/Portfolio-Project-1/)</b></span> :computer:
 
-[View full page screenshot](docs/screencapture-portfolio-project-1.png)
-
-This is Yoga Studio website created for Portfolio Project #1 (HTML&CSS) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). It is responsive across a range of devices and it is easy to navigate for site users. 
+This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). It is an online quiz app that is responsive across a range of devices and it is easy to navigate for site users.  
 <br>
-The users of this website will be able to find all importtant information about Yoga Studio such as about the studio, classes timetable, learning resources, photo gallery, booking form, contact and address information. The site is created for yoga enthusiasts who wants to join local studio or practice at home following on-line lessons.  
+ABOUT THE QUIZ - PLACEHOLDER TEXT
 
 <br>
 
 # Table of content 
 
-*   [Project](#project)
+*   [PROJECT](#project)
     *   [Strategy/Scope](#strategyscope)
     *   [Site owner goals](#site-owner-goals)
     *   [Site user goals](#user-goals)
-*   [User Experience (UX)](#user-experience-ux)
+*   [USER EXPERIENCE (UX)](#user-experience-ux)
     *   [Color Scheme](#colour-scheme)
     *   [Typography](#typography)
     *   [Structure](#structure)
-*   [Technology](#technology)
+*   [TECHNOLOGY](#technology)
     *   [Languages used](#languages-used)
     *   [Frameworks, libraries & software used](#languages-used)
-*   [Testing](#testing)
+*   [TESTING](#testing)
     *   [Accessibility](#accessibility)
     *   [Performance](#performance)
     *   [Validation](#validation)
@@ -55,8 +35,8 @@ The users of this website will be able to find all importtant information about 
     *   [Platforms/devices](#platformsdevices)
     *   [Bugs/known issues](#bugsknown-issues)
     *   [Responsiveness](#responsiveness)
-*   [Deployment](#deployment)
-*   [Credits](#credits)
+*   [DEPLOYMENT](#deployment)
+*   [CREDITS](#credits)
     *   [Code](#code)
     *   [Media](#media)
     *   [Acknowledgements](#acknowledgements)
@@ -353,22 +333,25 @@ I confirmed that this website is responsive and all the functions are displayed 
 
 ##   Bugs/known issues
 
-There was a minor issue spotted. Google Dev tools and Apple iPAD display position of "call to action" button in different way. My intention was to place it underneath the carousel caption text. Ipad displays it on top of the caption.  
+// Issues:
+// - choices stays selected on touch devices (can see it in DevTools too)
+// - max possible score is 9 instead of 10 
+// - no delay to see if the last 10th question was answered correctly
+// - clicking should be disabled after choice is clicked
 
 ![Bug](docs/bug1.png)
 
 #   Deployment
     
-The project was deployed to GitHub Pages using the following steps: 
+The project was deployed to GitHub Pages using the following steps:  
 
-1. Log in to GitHub and locate the [GitHub Repository 
-Portfolio-Project-1](https://github.com/alexkisielewicz/Portfolio-Project-1)
+1. Log in to GitHub and locate the [quiz-game](https://github.com/alexkisielewicz/quiz-game) repository. 
 2. Locate the "Settings" Button on the menu.
 3. Scroll down the Settings page until you locate the "Pages" in "Code and automation" section.
 4. Under "Source", click the dropdown called "Select branch:" and select "Main", click the dropdown called "Select folder" and select "/root".
-5. The page will automatically refresh and you receive message "Your site is published at https://alexkisielewicz.github.io/Portfolio-Project-1/". Result below: 
+5. The page will automatically refresh and you receive message "Your site is published at https://alexkisielewicz.github.io/quiz-game/". Result below: 
 
-![Deployment](docs/screenshot_deployment.png)
+![Deployment](docs/deployment.png)
 
 <br>
 
@@ -380,11 +363,17 @@ Portfolio-Project-1](https://github.com/alexkisielewicz/Portfolio-Project-1)
 
 ##  Media
 
--   All images used were sourced from free stock photos [StickPNG.com](https://www.stickpng.com/)
--   Quiz questions sources: 
+-   All images used were sourced from free stock images [StickPNG.com](https://www.stickpng.com/)
+-   [Icons8.com](https://icons8.com/) - source of favicon image
+-   Quiz questions were sourced from: 
     * [Entertainment.ie](https://entertainment.ie/movies/movie-news/17-quiz-questions-about-james-bond-457692/)
     * [UltimateQuizQuestions.com](https://www.ultimatequizquestions.com/james-bond-quiz/)
     * [Metro.co.uk](https://metro.co.uk/2021/09/30/james-bond-27-pub-quiz-questions-to-test-your-007-knowledge-15340805/)
+-   James Bond Theme Song was sourced from: [Archive.org](https://archive.org/details/tvtunes_6995)
+-   Audio files used as feedback for correct and incorrect answer were sourced from: 
+    * [Tuna.voicemod.net](https://tuna.voicemod.net/search?search=bond)
+    * [Soundboard.com](https://www.soundboard.com/sb/jamesbond)
+    * [Voicy.network](https://www.voicy.network/)
 
 ## Learning resources
 
@@ -392,6 +381,7 @@ Portfolio-Project-1](https://github.com/alexkisielewicz/Portfolio-Project-1)
 - [The book "JavaScript: The Definitive Guide, 7th Edition](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/)
 - [StackOverflow](https://stackoverflow.com/)
 - [W3Schools](https://www.w3schools.com/js/default.asp)
+- [Lage.us](https://lage.us/Javascript-Pass-Variables-to-Another-Page.html) - I learned how to pass variable to another page
 
 ##  Acknowledgements
 
@@ -400,4 +390,4 @@ Portfolio-Project-1](https://github.com/alexkisielewicz/Portfolio-Project-1)
 
 
 ## Disclaimer
--   <b>James Bond Quiz Game was created for educational purpose only.</b> 
+-   James Bond Quiz Game was created for educational purpose only. 
