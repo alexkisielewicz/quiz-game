@@ -16,7 +16,6 @@ let currentQuestion = {};
 
 // Question counter
 let questionCounter = document.getElementById("questionCounter");
-questionCounter = 0; 
 // Allow user to click on the choices depending on this Boolean variable value 
 let letUserClick = true; 
 
@@ -63,6 +62,8 @@ function startGame() {
    rulesContainer.classList.add("hide");
    controlsContainer.classList.add("hide");
    gameContainer.classList.remove("hide");
+   // Set question counter to 0, that prevents showing incorrect value for user re-playing quiz
+   questionCounter = 0; 
    // Play Audio with Bond Theme
    music.play();
    // Create new array with all questions to be able to remove used questions
@@ -149,7 +150,6 @@ function incorrectAnswer() {
  */
 function showQuestion() {
   if (availableQuestions.length <= 10) {
-     //alert("Your score is: " + userScore);
      return window.location.href = "score.html";
      } 
 
