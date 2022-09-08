@@ -6,9 +6,9 @@
 
 <span style="color: green;"><b>[View live website here](https://alexkisielewicz.github.io/quiz-game/)</b></span> :computer:
 
-This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript Essentials) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). <br> It is an interactife front-end quiz app where user can test their knowledge about James Bond films. The application is responsive across a range of devices and it is easy to use for the user. 
+This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript Essentials) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). <br> It is an interactife front-end quiz app where user can test their knowledge about James Bond films. The application is easy to use for the user, it is responsive across a range of devices and incorporates best practices regarding design and accesibility. 
 
-Project purpose is presentation of interactive data. The site should respond to the users actions allowing user to actively engage with data, alter the way the site displays the information to achieve their preferred goals.
+Project purpose is presentation of interactive data. The site should respond to the users actions allowing user to actively engage with data, alter the way the site displays the information to achieve their preferred goals. 
 
 <br>
 
@@ -47,59 +47,39 @@ Project purpose is presentation of interactive data. The site should respond to 
 #   Project
 ##  Strategy/Scope
 
-Yoga Studio website aims to provide essential information about the studio and its offer to the user in a clear and visually pleasing way. It targets people who are looking for information about yoga and want to join local club or start learning yoga on-line. 
+James Bond Quiz Game is an entertainment app intended for James Bond fans or other users who want to test their knowledge about James Bond's universe. The quiz contains question with various difficulty level, that encourages user to replay the game if he doesn't achieve maximum score in the first run.
 <br>
 
- The content is presented on scrolling page with sections dedicated to categorised informations. The <b>primary objective</b> is to find new studio members by leading them to classes booking form. With this in mind website highlights studio key points and presents yoga catagories to help users determine which is the right fit for them. <b>The secondary objective</b> is to provide on-line learning resources, giving user a choice between basic and advanced techniques.  
+ The content is presented on single page that interactively changes content depending on user actions. The <b>primary goal</b> is to entertain user during the game. With this in mind website's desing provides mixture of interactive elements, both visual and sound.  
+<b>The secondary objective</b> is to improve user's knowledge about James Bond universe. With this in mind, the app provides user a feedback after each answer.
 <br>
 To achieve the strategy goals I implemented following features:
-* simple website layout with a menu bar sticked to the top of the viewport for easy navigation,  
-* a carousel with caption images and call-to-action buttons forwarding user to relevant sections,
-* imformative "About" and "Learn" sections, 
-* multiple call-to-action buttons across the whole page,  
-* "Sign-in!" section with booking form providing feedback on submission,    
-* consistent images across the whole page to immerse the user in Site Owner's story. 
+
+* simple website layout with the content located in the center of the viewport,
+* buttons easy to click both on computers and mobile touch interfaces, 
+* plain and simple game rules, 
+* intuitive game interface that presents important informations and controls in a clear way,
+* visual and sound feedback to user actions,
+* funny sound effects and eye-pleasing graphics to make the experience entertaining. 
 <br>
 
 ## Site owner goals
 
-- to promote Yoga Studio in the local area by offering in-studio classes and on-line by providing learning resources, 
-- to provide important information about Yoga Studio, such as: business background, offered classes, classes timetable, instructors silhouettes, contact information, address, opening times, social media profiles,  
-- to provide multimedia showing the studio,  
-- to provide booking form for the users allowing them to join the club and starting yoga activities,    
-- provide image gallery with photos from the studio to promote yoga and encourage new people to join, 
-- provide social meddia links to obtain new followers who become part of Yoga Studio community, 
+- provide entertaining and interactive experience for the user, 
+- provide game app with questions with various difficulty level, 
+- provide a link to the project's GitHub repository, to interest user in the project and to obtain new followers, 
 - to provide website that looks well across a range of devices (responsiveness).  
 
 ##  User goals
 
-- as a new user I want to:
+- as a user I want to:
     - navigate easily through the page, 
-    - learn more about yoga, 
-    - find information about Yoga Studio and it's offer, 
-    - check classes timetable, 
-    - check opening times,
-    - check the photos from the studio to find out what's the "vibe" in there,  
-    - book my classes/join the studio 
-    - find out who teaches yoga, 
-    - learn yoga techniques by watching tutorials, 
-    - contact Yoga Studio, 
-    - check address, get directions to Studio, 
-    - follow Yoga Studio on social media, 
-
-    <br>
-
-- as a returning user I want to:
-    -   navigate easily through the page, 
-    -   check classes timetable,
-    -   check opening times,  
-    -   book yoga classes, 
-    -   watch on-line yoga lessons,  
-    -   contact Yoga Studio,
-    -   get directions to Yoga Studio
-    -   see the pictures from yoga sessions. 
-
-<br>
+    - understand the rules of the game,
+    - receive feedback for given answers,
+    - play/pause audio
+    - learn something new about James Bond universe,   
+    - enjoy the game
+    - follow the developer in social media 
 
 #   User Experience (UX)
 
@@ -107,7 +87,7 @@ To achieve the strategy goals I implemented following features:
 
 Colour palette was selected using <b>coolors.co</b> generator and has been extracted from the frame comming from the film "Skyfall". The number of colours used has been reduced as there was no need for all of them.
 
-For best readability and clean look white colour was chosen for the bacgkround of the quiz-rules and the buttons, hex colour #51301C was chosen for the text. I chose "gold #FFD700" colour for hover effect for the buttons on the start screen and user interface elements such as progress bar, question counter, audio controls and score counter. Light gray colour was selected as a background that fills "the barrel". Depending on the answer, user is given a feedback for correct and incorrect answer. Barrel background colour changes colour to green and red respectively. Also correct and incorrect answers are highlited in the same style to provide visual feedback.  
+For best readability and clean look white colour was chosen for the bacgkround of the quiz-rules and the buttons, hex colour #51301C was chosen for the text. I chose "gold #FFD700" colour for hover effect for the buttons on the start screen and user interface elements such as progress bar, question counter, audio controls and score counter. Light gray colour and linear gradient was selected as a background that fills "the barrel". Depending on the answer, user is given a feedback for correct/incorrect answer. Barrel background colour changes colour to green and red respectively. Also correct and incorrect answers are highlited in the same colour style to provide visual feedback.  
 
 ![Colour Scheme](docs/design_colourpalette_1.jpg)
 
@@ -117,7 +97,7 @@ For best readability and clean look white colour was chosen for the bacgkround o
 
 ##  Typography
 
--   The <b>Merriweather</b> font is the font used throughout the whole website with Serif as the fallback. The Merriweather is a clean, modern looking font and is attractive. It is sourced from [Google fonts](https://fonts.google.com/specimen/Merriweather) and it's linked to css document via @import. 
+-   The <b>Merriweather</b> font is the font used throughout the whole website with Serif as the fallback. The Merriweather is a clean, modern looking font and is attractive. It is sourced from [Google fonts](https://fonts.google.com/specimen/Merriweather) and it's linked to CSS document via @import. 
 
 
 ![Google fonts](docs/design_typography_merriweather.png)
