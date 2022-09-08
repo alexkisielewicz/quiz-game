@@ -115,7 +115,7 @@ The font is used on the quiz main screen (the header and the buttons) and also a
 
 ##  Structure
 
-### Wireframes - [View all wireframes - PDF file](https://github.com/alexkisielewicz/Portfolio-Project-1/tree/main/docs/yoga_studio_portfolio_project_1.pdf)
+### Wireframes - [View all wireframes - PDF file](https://github.com/alexkisielewicz/quiz-game/tree/main/docs/wireframes_pp2.pdf)
 
 Page is designed in well known scrolling page style that users like. It provides fast access to information and immerses user in the story. Navigation bar is always visible in the viewport, that reduces number of clicks to reach desirable content. Website consists of following sections: 
 
