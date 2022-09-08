@@ -1,5 +1,7 @@
+/* Import google font */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap');
 
+/* Use font from local directory */
 @font-face {
 	font-family: 'SkyFall Done Regular';
 	font-style: normal;
@@ -32,6 +34,7 @@ body {
 	overflow: hidden;
 }
 
+/* Containers */
 .wrapper {
 	width: 100vw;
 	height: 100vh;
@@ -55,6 +58,38 @@ body {
 	visibility: visible;
 }
 
+#rules {
+	font-family: 'SkyFall Done Regular';
+	background-color: #FFF;
+	font-size: 1.25rem;
+	text-align: center;
+	font-weight: bold;
+	padding: 20px;
+	margin: 10px auto;
+	width: 100%;
+	border: 2px solid #787D83;
+	border-radius: 10px;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+}
+
+#game {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#question {
+	width: 100%;
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: #FFF;
+	background-color: #A88D64;
+	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	margin-bottom: 30px;
+	padding: 15px;
+}
+
+/* Headings */
 h1 {
 	color: #000;
 	font-family: 'SkyFall Done Regular';
@@ -71,6 +106,7 @@ h2 {
 	text-shadow: 1px 1px 1px #FFF, 0 0 25px #FFF, 0 0 5px #FFF;
 }
 
+/* Buttons */
 .button {
 	cursor: pointer;
 	color: #511F1C;
@@ -114,20 +150,13 @@ h2 {
 	border: 2px solid #787D83;
 }
 
-#rules {
-	font-family: 'SkyFall Done Regular';
-	background-color: #FFF;
-	font-size: 1.25rem;
-	text-align: center;
-	font-weight: bold;
-	padding: 20px;
-	margin: 10px auto;
-	width: 100%;
-	border: 2px solid #787D83;
-	border-radius: 10px;
-	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
-}
+#playAgain {
+    font-size: 1.rem;
+    margin-bottom: 0px;
+    padding: 15px;
+  }
 
+/* Quiz rules */
 #rules > ul {
 	list-style-position: outside;
 	list-style-image: url('../images/bullet.png');
@@ -137,23 +166,7 @@ li {
 	margin-bottom: 1.25rem;
 }
 
-#game {
-	width: 90%;
-	margin: 0 auto;
-}
-
-#question {
-	width: 100%;
-	font-size: 1.25rem;
-	font-weight: bold;
-	color: #FFF;
-	background-color: #A88D64;
-	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
-	border-radius: 10px;
-	margin-bottom: 30px;
-	padding: 15px;
-}
-
+/* Correct & Incorrect highlight for the answer buttons */
 .correct,
 .correct:hover {
 	color: #FFF;
@@ -170,6 +183,7 @@ li {
 	box-shadow: 0 0.2rem 1rem 0 rgba(255, 255, 255, 0.6);
 }
 
+/* Score page - game result */
 #endgame {
 	width: 100%;
 	background-color: rgb(211, 211, 211);
@@ -191,6 +205,8 @@ li {
 .max-score {
   color: #080;
 }
+
+/* Interface elements - controls */
 
 .hide {
 	display: none;
@@ -236,6 +252,7 @@ li {
 	transition-duration: 500ms;
 }
 
+/* Footer and social media icons */
 footer {
 	position: fixed;
 	bottom: 0;
@@ -252,12 +269,6 @@ footer {
 	padding: 10px;
 	margin-bottom: 10px;
 }
-
-#playAgain {
-    font-size: 1.rem;
-    margin-bottom: 0px;
-    padding: 15px;
-  }
 
 .social-icons:hover {
 	color: #FFD700;
