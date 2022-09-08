@@ -1,4 +1,4 @@
-<h1 align="center">James Bond Quiz Game - JavaScript Project</h1>
+<h1 align="center">James Bond Quiz Game - JavaScript</h1>
 
 ### Developer: Aleksander Kisielewicz
 
@@ -6,10 +6,9 @@
 
 <span style="color: green;"><b>[View live website here](https://alexkisielewicz.github.io/quiz-game/)</b></span> :computer:
 
-This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). <br> It is an online quiz app where user can test their knowledge about James Bond films. The application is responsive across a range of devices and it is easy to use for the user. 
+This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript Essentials) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). <br> It is an interactife front-end quiz app where user can test their knowledge about James Bond films. The application is responsive across a range of devices and it is easy to use for the user. 
 
-
-PROJECT GOAL FROM LMS PP#2
+Project purpose is presentation of interactive data. The site should respond to the users actions allowing user to actively engage with data, alter the way the site displays the information to achieve their preferred goals.
 
 <br>
 
