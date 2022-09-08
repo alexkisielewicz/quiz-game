@@ -238,15 +238,15 @@ Foreground and background colour contrast check was done using [Audioeye.com](ht
 
 ![Validator 404 page](docs/validator_html_index_1.png)
 
-:heavy_check_mark: index.html - after fixing above error.
+:heavy_check_mark: Result for index.html: no errors.
 
 ![Final test](docs/validator_html_index_2.png)
 
-Result for gameresult.html page :heavy_check_mark:
+:heavy_check_mark: Result for gameresult.html: no errors.
 
 ![Validator 404 page](docs/validator_html_score.png)
 
-Result for 404.html page :heavy_check_mark:
+:heavy_check_mark: Result for 404.html: no errors.
 
 ![Validator 404 page](docs/validator_html_404.png)
 
@@ -254,7 +254,7 @@ Result for 404.html page :heavy_check_mark:
 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)  - validation service used.
 
-No Error Found. :heavy_check_mark:
+:heavy_check_mark: No Error Found.
 
 ![Validator CSS](docs/validator_css.png)
 
