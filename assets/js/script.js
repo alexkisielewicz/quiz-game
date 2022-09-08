@@ -150,7 +150,7 @@ function incorrectAnswer() {
  */
 function showQuestion() {
     if (availableQuestions.length <= 10) {
-        return window.open('score.html');
+        return window.location.href = "score.html";
     }
 
     // Increment question counter
@@ -162,7 +162,6 @@ function showQuestion() {
     // Update progress bar display by 10% for each questione
     progressBarWidth += 10;
     progress.style.width = progressBarWidth + "%";
-
 
 
     // Get random question from the array with all questions (in questions.js)
