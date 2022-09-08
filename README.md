@@ -4,11 +4,12 @@
 
 ![Am I Responsive](docs/mockup_responsiveness.png)
 
-<span style="color: green;"><b>[View live website here](https://alexkisielewicz.github.io/Portfolio-Project-1/)</b></span> :computer:
+<span style="color: green;"><b>[View live website here](https://alexkisielewicz.github.io/quiz-game/)</b></span> :computer:
 
-This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). It is an online quiz app that is responsive across a range of devices and it is easy to navigate for site users.  
-<br>
-ABOUT THE QUIZ - PLACEHOLDER TEXT
+This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). <br> It is an online quiz app where user can test their knowledge about James Bond films. The application is responsive across a range of devices and it is easy to use for the user. 
+
+
+PROJECT GOAL FROM LMS PP#2
 
 <br>
 
@@ -31,6 +32,7 @@ ABOUT THE QUIZ - PLACEHOLDER TEXT
     *   [Validation](#validation)
     *   [HTML](#html)
     *   [CSS](#css)
+    *   [JavaScript](#javascript)
     *   [Browser compatibility](#browser-compatibility)
     *   [Platforms/devices](#platformsdevices)
     *   [Bugs/known issues](#bugsknown-issues)
@@ -136,37 +138,36 @@ Page is designed in well known scrolling page style that users like. It provides
 
 ## Start screen 
 
-DESCRIPTION PLACEHOLDER 
-
-DESCRIPTION PLACEHOLDER
+One of the most recognizable and iconic elements of Bond films is gun barrel intro sequence. That kind of barrel was chosen to be a background for all pages throughout the application. The main content is presented in the center of the barrel opening which is also center of the viewport. The .png file has been used so the center of the barrel could be tranparent and show background that changes during the game depending on user actions.  
 
 ![Start screen](docs/features_start.png)
 
-DESCRIPTION PLACEHOLDER
+Start screen presents to the user Quiz logo and two buttons; RULES and START. User can learn easy to follow quiz rules after clicking on the RULES button. The game starts after clicking on START button. James Bond Theme Song starts to play in the background.  
 
 ![Rules](docs/features_rules.png)
 
 ## Controls
 
-DESCRIPTION PLACEHOLDER
+Start screen buttons and logo become hidden and interface reveals informative controls section where user can track their progress and pause/play theme song.   
 
 ![Controls](docs/features_controls.png)
 
 ## Question 
 
-DESCRIPTION PLACEHOLDER
+Interface displays 10 randomly selected questions with four answer options. 
 
 ![Question](docs/features_question.png)
 
-## Feedback for correct and incorrect answer
+## Visual and audio feedback for correct and incorrect answer
 
-DESCRIPTION PLACEHOLDER
+There is a feedback provided to the user when answer is given. Depending on correct or incorrect answer, the opening of the barrel changes colour respectively to green and red. There is an "agent" image presented in the center of the screen in case of correct answer and blood stains in case of incorrect answer. The correct and incorrect answers are also highlited and audio feedback is played. The volume of Bond Theme Song is decresed by default to value 0.4 in JavaScript, this allows user to hear answer audio feedback much clearer. 
+
 
 ![Feedback](docs/features_feedback.jpg)
 
 ## Footer
 
- DESCRIPTION PLACEHOLDER
+ Simple, nondistracting footer at the bottom of the screen is incorporated in black bar resembling films black bars. It contains only one item - GitHub icon with link leading to project repository.  
 
 ![Footer](docs/features_footer.png)
 
@@ -245,13 +246,13 @@ Foreground and background color contrast check was done using [Audioeye.com](htt
 
 [WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool was used to check accessibility. It reported one error "Missing alternative text". It is related to carousel background photo linked via CSS stylesheet. Alternative text cannot be set in this case. Four alerts are minor and related to justified text in the paragraphs. 
 
-![](docs/validator_wave.png)
+![](docs/validator_testing1.png)
 
 ##   Performance
 
  [Lighthouse](https://developers.google.com/web) - Google webdev tool used for performance testing. <br>
 
-![Lighthouse](docs/lighthouse.png)
+![Lighthouse](docs/testing_performance_lighthouse.png)
 
 ##   Validation
 
@@ -262,7 +263,14 @@ Foreground and background color contrast check was done using [Audioeye.com](htt
 :x: index.html - first result found 2 errors that refer to unclosed element and missing open element. <br>
 Three warnings refer to lack of heading in sections such as Gallery, YouTube video or Google Map and also recommend using h2-h6 headers instead of h1 used in Carousel caption.  
 
-![First test](docs/validator_html_errors.png) 
+
+
+![Validator 404 page](docs/validator_html_404.png)
+![Validator 404 page](docs/validator_html_index_1.png)
+![Validator 404 page](docs/validator_html_index_2.png)
+![Validator 404 page](docs/validator_html_404.png)
+![Validator 404 page](docs/validator_html_score.png)
+
 
 :heavy_check_mark: index.html - after error fixes, final result: ![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Falexkisielewicz.github.io%2FPortfolio-Project-1%2F)
 
@@ -280,9 +288,14 @@ Result for thankyou.html page :heavy_check_mark:
 
 - [Custom stylesheet](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Falexkisielewicz.github.io%2FPortfolio-Project-1%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en-EN) -  No Error Found. :heavy_check_mark: 
 
-- [Bootstrap stylesheet](https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css) - has errors :x: 
 
-![CSS Validator](docs/validator_css.png)
+![Validator CSS](docs/validator_css.png)
+
+
+### JavaScript 
+
+![JSHint](docs/validator_jshint_1.png)
+![JSHint](docs/validator_jshint_2.png)
 
 ##   Browser compatibility
 
@@ -304,7 +317,10 @@ I confirmed that this website is responsive and all the functions are displayed 
 // - no delay to see if the last 10th question was answered correctly
 // - clicking should be disabled after choice is clicked
 
-![Bug](docs/bug1.png)
+![Bug](docs/bugs_1.png)
+![Bug](docs/bugs_2.png)
+
+
 
 #   Deployment
     
