@@ -67,7 +67,7 @@ To achieve the strategy goals I implemented following features:
 
 - provide entertaining and interactive experience for the user, 
 - provide game app with questions with various difficulty level, 
-- provide a link to the project's GitHub repository, to interest user in the project and to obtain new followers, 
+- provide a link to linkedIn and the project's GitHub repository, to interest user in the project and to obtain new followers, 
 - to provide website that looks well across a range of devices (responsiveness).  
 
 ##  User goals
@@ -75,10 +75,14 @@ To achieve the strategy goals I implemented following features:
 - as a user I want to:
     - navigate easily through the page, 
     - understand the rules of the game,
+    - see clean interface and be able to track progress/score,
+    - know how many questions I have left to answer,
     - receive feedback for given answers,
     - play/pause audio
     - learn something new about James Bond universe,   
-    - enjoy the game
+    - enjoy the game, 
+    - see my score after I answer the last question,
+    - be able to re-play the game without using "back" button in the browser
     - follow the developer in social media 
 
 #   User Experience (UX)
