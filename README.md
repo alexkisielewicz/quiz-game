@@ -48,15 +48,15 @@ Project purpose is presentation of interactive data. The site should respond to 
 #   Project
 ##  Strategy/Scope
 
-James Bond Quiz Game is an entertainment app intended for James Bond fans or other users who want to test their knowledge about James Bond's universe. The quiz contains question with various difficulty level, that encourages user to replay the game if he doesn't achieve maximum score in the first run.
+James Bond Quiz Game is an entertainment app intended for James Bond fans or other users who want to test their knowledge about James Bond's universe. The quiz contains questions with various difficulty level, that encourages user to replay the game if he doesn't achieve maximum score in the first run.
 <br>
 
- The content is presented on single page that interactively changes content depending on user actions. The <b>primary goal</b> is to entertain user during the game. With this in mind website's desing provides mixture of interactive elements, both visual and sound. <b>The secondary objective</b> is to improve user's knowledge about James Bond universe. With this in mind, the app provides user a feedback after each answer.
+ The content is presented on a single page that interactively changes content depending on user actions. The <b>primary goal</b> is to entertain user during the game. With this in mind website's desing provides mixture of interactive elements, both visual and sound. <b>The secondary objective</b> is to improve user's knowledge about James Bond universe. With this in mind, the app provides user a feedback after each answer. 
 
 To achieve the strategy goals I implemented following features:
 
 * simple website layout with the content located in the center of the viewport,
-* buttons easy to click both on computers and mobile touch interfaces,
+* easy to click buttons both on computers and mobile touch interfaces,
 * plain and simple game rules,
 * intuitive game interface that presents important informations and controls in a clear way,
 * visual and sound feedback to user actions,
@@ -91,7 +91,7 @@ To achieve the strategy goals I implemented following features:
 
 Colour palette was selected using <b>coolors.co</b> generator and has been extracted from the frame comming from the film "Skyfall". The number of colours used has been reduced as there was no need for all of them.
 
-For best readability and clean look white colour was chosen for the bacgkround of the quiz-rules and the buttons, hex colour #51301C was chosen for the text. I chose "gold #FFD700" colour for hover effect for the buttons on the start screen and user interface elements such as progress bar, question counter, audio controls and score counter. Light gray colour and linear gradient was selected as a background that fills "the barrel". Depending on the answer, user is given a feedback for correct/incorrect answer. Barrel background colour changes colour to green and red respectively. Also correct and incorrect answers are highlited in the same colour style to provide visual feedback.  
+For best readability and clean look white colour was chosen for the bacgkround of the quiz-rules and the buttons, hex colour #51301C was chosen for the text. I chose "gold #FFD700" colour for hover effect for the buttons on the start screen and user interface elements such as progress bar, question counter, audio controls and score counter. Light gray colour and linear gradient was selected as a background that fills "the barrel". Depending on the answer, user is given a feedback for correct/incorrect answer. Barrel background colour changes colour to green and red respectively. Also correct and incorrect answers are highlighted in the same colour style to provide visual feedback.  
 
 ![Colour Scheme](docs/design_colourpalette_1.jpg)
 
@@ -121,7 +121,7 @@ Page is designed in very simple way. All pages display gun barell and the conten
 
 ## Start screen
 
-One of the most recognizable and iconic elements of Bond films is gun barrel intro sequence. That kind of barrel was chosen to be a background for all pages throughout the application. The main content is presented in the center of the barrel opening which is also center of the viewport. The .png file has been used so the center of the barrel could be tranparent and show background that changes during the game depending on user actions.  
+One of the most recognizable and iconic elements of Bond films is gun barrel intro sequence. That kind of barrel was chosen to be a background for all pages throughout the application. The main content is presented in the center of the barrel opening which is also center of the viewport. The .png file has been used so the center of the barrel could be transparent and show background that changes during the game depending on user actions.  
 
 ![Start screen](docs/features_start.png)
 
@@ -131,18 +131,20 @@ Start screen presents to the user quiz logo and two buttons; RULES and START. Us
 
 ## Controls
 
-Start screen buttons and logo become hidden and interface reveals informative controls section where user can track their progress and pause/play theme song.
+Start screen buttons and logo become hidden and interface reveals informative controls section where user can track their progress and pause/play theme song. On the left there is question counter, on the right user score and play/pause button between them. 
 
 ![Controls](docs/features_controls.png)
 
 ## Question
 
-Interface displays 10 randomly selected questions (from 20 available). Each question has 4 answer choices and only one is correct. The next question is automatically showed when user select the answer. 
+Interface displays 10 randomly selected questions (from 20 available). Each question has 4 answer choices and only one is correct. The next question is automatically showed when user select the answer.
+
 ![Question](docs/features_question.png)
 
 ## Visual and audio feedback for correct and incorrect answer
 
-There is a feedback provided to the user when answer is given. Depending on correct or incorrect answer, the opening of the barrel changes colour respectively to green or red. There is an "agent" image presented in the center of the screen in case of correct answer and blood stains in case of incorrect answer. The correct and incorrect answers are also highlited and audio feedback is played. The volume of Bond Theme Song is decresed to value 0.4 (1.0 is default) in JavaScript, this allows user to hear answer audio feedback much clearer.
+There is a feedback provided to the user when answer is given. Depending on correct or incorrect answer, the opening of the barrel changes colour respectively to green or red. There is an "agent" image presented in the center of the screen in case of correct answer and blood stains in case of incorrect answer. The correct and incorrect answers are also highlited and audio feedback is played. 
+The volume of Bond Theme Song is decresed to value 0.4 (1.0 is default) in JavaScript, this allows user to hear answer audio feedback much clearer.
 
 ![Feedback](docs/features_feedback.jpg)
 
@@ -165,16 +167,16 @@ An error page is displayed in case that user tries to open a website that cannot
 
 ![404](docs/features_404.png)
 
-#   [Technology](#technology)
+#   Technology
     
-##  [Languages used](#languages-used)
+##  Languages used
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 -   [Markdown](https://en.wikipedia.org/wiki/Markdown) - markup language used to write this document.
     
-##  [Frameworks, libraries & software used](#languages-used)
+##  Frameworks, libraries & software used
 
 - [Balsamiq](https://balsamiq.com/) - Balsamiq was used to create the [wireframes](#structure) during the design process.
 
@@ -234,7 +236,7 @@ Foreground and background colour contrast check was done using [Audioeye.com](ht
 
 - [W3C Markup Validator](https://validator.w3.org/nu/) - validation service used.
 
-:x: index.html - first test found 1 error that refer to attribute "alt" used with anchor element. The issue was fixed by changing this attribute to "title". One warning refer to empty heading. It was also found by WAVE accesibility tool - [click for description](#accessibility). Header is used as placeholder for font-awesome icon and manipulated by JavaScript.
+:x: index.html - first test found 1 error that refer to attribute "alt" used with anchor element. The issue was fixed by changing this attribute to "title". One warning refers to empty heading. It was also found by WAVE accesibility tool - [click for description](#accessibility). Header is used as placeholder for font-awesome icon and manipulated by JavaScript.
 
 ![Validator 404 page](docs/validator_html_index_1.png)
 
@@ -242,7 +244,7 @@ Foreground and background colour contrast check was done using [Audioeye.com](ht
 
 ![Final test](docs/validator_html_index_2.png)
 
-:heavy_check_mark: Result for gameresult.html: no errors.
+:heavy_check_mark: Result for score.html: no errors.
 
 ![Validator 404 page](docs/validator_html_score.png)
 
@@ -262,15 +264,9 @@ Foreground and background colour contrast check was done using [Audioeye.com](ht
 
 - [JS Hint](https://jshint.com/) - validation service used.
 
-:heavy_check_mark: JS Hint didn't find any errors, there was one warning for the functions used in line 153. The issue was fixed by changing <i>window.location.href</i> property to <i>window.open()</i> method. Solution was found on [StackOverflow](https://stackoverflow.com/questions/7077770/window-location-href-and-window-open-methods-in-javascript).
-
-Screnshoot before fix:
+:heavy_check_mark: JS Hint didn't find any errors, there was one warning for the functions used in line 153. Use of <i>window.location.href</i> property is correct, it executes the code in the window where it's called. <i>window.open()</i> method would open new window and that would not be allowed on some mobile devices.
 
 ![JSHint](docs/testing_validator_jshint_1.png)
-
-Screnshoot after fix:
-
-![JSHint](docs/testing_validator_jshint_2.png)
 
 - Application was tested manually for bugs and errors during throught development process. All console.log messages have been removed before app release.
 
@@ -304,7 +300,7 @@ I asked my friends and CI coleagues to test the application and I received a lot
 
 <b>Solution:</b> [StackOverflow](https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices)
 
-Pseudo-class .button:hover was replaced with CSS at rule below: 
+Pseudo-class .button:hover was replaced with CSS at-rule below: 
 
 ![Solution](docs/bugs_1_fix.png)
 
