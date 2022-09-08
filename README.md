@@ -117,7 +117,7 @@ The font is used on the quiz main screen (the header and the buttons) and also a
 
 ### Wireframes - [View all wireframes - PDF file](https://github.com/alexkisielewicz/quiz-game/tree/main/docs/wireframes_pp2.pdf)
 
-Page is designed in well known scrolling page style that users like. It provides fast access to information and immerses user in the story. Navigation bar is always visible in the viewport, that reduces number of clicks to reach desirable content. Website consists of following sections: 
+Page is designed in very simple way. All pages display gun barell and the content is located in it's opening in the center of the screen. The content is changed dynamicaly by JavaScript manipulating DOM. 
 
 ## Start screen 
 
@@ -125,7 +125,7 @@ One of the most recognizable and iconic elements of Bond films is gun barrel int
 
 ![Start screen](docs/features_start.png)
 
-Start screen presents to the user Quiz logo and two buttons; RULES and START. User can learn easy to follow quiz rules after clicking on the RULES button. The game starts after clicking on START button. James Bond Theme Song starts to play in the background.  
+Start screen presents to the user quiz logo and two buttons; RULES and START. User can learn easy to follow game rules after clicking on the RULES button. The game starts after clicking on START button. James Bond Theme Song starts to play in the background, the autoplay function is not used as it is not recommended by industry standards. 
 
 ![Rules](docs/features_rules.png)
 
@@ -137,26 +137,25 @@ Start screen buttons and logo become hidden and interface reveals informative co
 
 ## Question 
 
-Interface displays 10 randomly selected questions with four answer options. 
+Interface displays 10 randomly selected questions (from 20 available). Each question has 4 answer choices and only one is correct. The next question is automatically showed when user select the answer. 
 
 ![Question](docs/features_question.png)
 
 ## Visual and audio feedback for correct and incorrect answer
 
-There is a feedback provided to the user when answer is given. Depending on correct or incorrect answer, the opening of the barrel changes colour respectively to green and red. There is an "agent" image presented in the center of the screen in case of correct answer and blood stains in case of incorrect answer. The correct and incorrect answers are also highlited and audio feedback is played. The volume of Bond Theme Song is decresed by default to value 0.4 in JavaScript, this allows user to hear answer audio feedback much clearer. 
-
+There is a feedback provided to the user when answer is given. Depending on correct or incorrect answer, the opening of the barrel changes colour respectively to green or red. There is an "agent" image presented in the center of the screen in case of correct answer and blood stains in case of incorrect answer. The correct and incorrect answers are also highlited and audio feedback is played. The volume of Bond Theme Song is decresed to value 0.4 (1.0 is default) in JavaScript, this allows user to hear answer audio feedback much clearer.
 
 ![Feedback](docs/features_feedback.jpg)
 
 ## Footer
 
- Simple, nondistracting footer at the bottom of the screen is incorporated in black bar resembling films black bars. It contains only one item - GitHub icon with link leading to project repository.  
+ Simple, nondistracting footer at the bottom of the screen is incorporated in black bar resembling films black bars. It contains only one item - GitHub icon with link leading to project repository. <b>LinkedIn</b> icon and link has been added in the development process.
 
 ![Footer](docs/features_footer.png)
 
 ## Score page
 
-DESCRIPTION PLACEHOLDER
+Score page is displayed automatically after user answers the last tenth question. There are two kinds of score page messages. If user achieve maximum score of ten points - page with gold background is displayed. If user's score is other than 10 points, the second message is displayed. In both cases user can click  "play again" button to start new game without using "back" button in the browser.
 
 ![Footer](docs/features_endgame_1.png)
 
@@ -164,7 +163,7 @@ DESCRIPTION PLACEHOLDER
 
 
 ## HTTP 404 Page
-An error page in case that user tries to open a website that cannot be found on the web server. User doesn't have to use browser "go back" button, the link to the main page is provided.
+An error page is displayed in case that user tries to open a website that cannot be found on the web server. User doesn't have to use browser "go back" button, the link to the main page is provided. 
 
 ![404](docs/features_404.png)
 
@@ -222,14 +221,13 @@ An error page in case that user tries to open a website that cannot be found on 
 
 Foreground and background color contrast check was done using [Audioeye.com](http://www.audioeye.com) online tool.
 
-![Contrast 1](docs/contrast1.png) 
-
-![Contrast 2](docs/contrast2.png) 
+![Contrast 1](docs/testing_contrast.png) 
+ 
 
 
 [WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool was used to check accessibility. It reported one error "Missing alternative text". It is related to carousel background photo linked via CSS stylesheet. Alternative text cannot be set in this case. Four alerts are minor and related to justified text in the paragraphs. 
 
-![](docs/validator_testing1.png)
+![](docs/testing_wave.png)
 
 ##   Performance
 
@@ -345,13 +343,12 @@ The project was deployed to GitHub Pages using the following steps:
 - [The book "JavaScript: The Definitive Guide, 7th Edition](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/)
 - [StackOverflow](https://stackoverflow.com/)
 - [W3Schools](https://www.w3schools.com/js/default.asp)
-- [Lage.us](https://lage.us/Javascript-Pass-Variables-to-Another-Page.html) - I learned how to pass variable to another page
+- [Lage.us](https://lage.us/Javascript-Pass-Variables-to-Another-Page.html) - I learned how to pass variable to another page using local storage.
 
 ##  Acknowledgements
 
 -   My Mentor Reuben Ferrante for helpful feedback and guidance at all stages of the project. 
--   Code Institute Slack Community for being invaluable knoledge base.    
-
+-   Code Institute Slack Community for being invaluable knowledge base.
 
 ## Disclaimer
 -   James Bond Quiz Game was created for educational purpose only. 
