@@ -230,7 +230,7 @@ function enableDisableButtons(event, disable = true) {
 
 /** 
  * For each method is used to add event listeners for user clicks on the choices. If buttons are enabled it disables them after user click. This prevents user from clicking on other choices and displaying feedback multiple times. There are 20 questions in the array and user answers 10 random questions. When user answers the last tenth question the quiz ends and score button is displayed.    
- * Mentor - Reuben Ferrante edited the code with first "if" condition.  
+ * Mentor - Reuben Ferrante edited the code with first "if" conditional to hepl me solve issue with choices buttons that were still clickable after user gives answer. 
  */
 choices.forEach((choice) => {
     choice.addEventListener("click", (event) => {
