@@ -150,7 +150,7 @@ function incorrectAnswer() {
  */
 function showQuestion() {
     if (availableQuestions.length <= 10) {
-        return window.location.href = "score.html";
+        return window.open('score.html');
     }
 
     // Increment question counter
