@@ -4,7 +4,7 @@
 
 ![Am I Responsive](docs/mockup_responsiveness.png)
 
-<span style="color: green;"><b>[View live website here](https://alexkisielewicz.github.io/quiz-game/)</b></span> :computer:
+<b>[View live website here](https://alexkisielewicz.github.io/quiz-game/)</b> :computer:
 
 This is James Bond Quiz Game created as Portfolio Project #2 (JavaScript Essentials) for Diploma in Full Stack Software Development at [Code Institute](https://www.codeinstitute.net). <br> It is an interactife front-end quiz app where user can test their knowledge about James Bond films. The application is easy to use for the user, it is responsive across a range of devices and incorporates best practices regarding design and accesibility. 
 
@@ -19,7 +19,7 @@ Project purpose is presentation of interactive data. The site should respond to 
     *   [Site owner goals](#site-owner-goals)
     *   [Site user goals](#user-goals)
 *   [User Experience (UX/UI)](#user-experience-ux)
-    *   [Color Scheme](#colour-scheme)
+    *   [Colour Scheme](#colour-scheme)
     *   [Typography](#typography)
     *   [Structure](#structure)
 *   [Technology](#technology)
@@ -36,6 +36,7 @@ Project purpose is presentation of interactive data. The site should respond to 
     *   [Platforms/devices](#platformsdevices)
     *   [Bugs/known issues](#bugsknown-issues)
     *   [Responsiveness](#responsiveness)
+    *   [Peer review](#peer-review)
 *   [Deployment](#deployment)
 *   [Credits](#credits)
     *   [Code](#code)
@@ -50,40 +51,39 @@ Project purpose is presentation of interactive data. The site should respond to 
 James Bond Quiz Game is an entertainment app intended for James Bond fans or other users who want to test their knowledge about James Bond's universe. The quiz contains question with various difficulty level, that encourages user to replay the game if he doesn't achieve maximum score in the first run.
 <br>
 
- The content is presented on single page that interactively changes content depending on user actions. The <b>primary goal</b> is to entertain user during the game. With this in mind website's desing provides mixture of interactive elements, both visual and sound.  
-<b>The secondary objective</b> is to improve user's knowledge about James Bond universe. With this in mind, the app provides user a feedback after each answer.
-<br>
+ The content is presented on single page that interactively changes content depending on user actions. The <b>primary goal</b> is to entertain user during the game. With this in mind website's desing provides mixture of interactive elements, both visual and sound. <b>The secondary objective</b> is to improve user's knowledge about James Bond universe. With this in mind, the app provides user a feedback after each answer.
+
 To achieve the strategy goals I implemented following features:
 
 * simple website layout with the content located in the center of the viewport,
-* buttons easy to click both on computers and mobile touch interfaces, 
-* plain and simple game rules, 
+* buttons easy to click both on computers and mobile touch interfaces,
+* plain and simple game rules,
 * intuitive game interface that presents important informations and controls in a clear way,
 * visual and sound feedback to user actions,
-* funny sound effects and eye-pleasing graphics to make the experience entertaining. 
+* funny sound effects and eye-pleasing graphics to make the experience entertaining.
 <br>
 
 ## Site owner goals
 
-- provide entertaining and interactive experience for the user, 
-- provide game app with questions with various difficulty level, 
-- provide a link to linkedIn and the project's GitHub repository, to interest user in the project and to obtain new followers, 
+- provide entertaining and interactive experience for the user,
+- provide game app with questions with various difficulty level,
+- provide a link to linkedIn and the project's GitHub repository, to interest user in the project and to obtain new followers,
 - to provide website that looks well across a range of devices (responsiveness).  
 
 ##  User goals
 
 - as a user I want to:
-    - navigate easily through the page, 
+    - navigate easily through the page,
     - understand the rules of the game,
     - see clean interface and be able to track progress/score,
     - know how many questions I have left to answer,
     - receive feedback for given answers,
     - play/pause audio
-    - learn something new about James Bond universe,   
-    - enjoy the game, 
+    - learn something new about James Bond universe,
+    - enjoy the game,
     - see my score after I answer the last question,
     - be able to re-play the game without using "back" button in the browser
-    - follow the developer in social media 
+    - follow the developer in social media
 
 #   User Experience (UX)
 
@@ -101,13 +101,13 @@ For best readability and clean look white colour was chosen for the bacgkround o
 
 ##  Typography
 
--   The <b>Merriweather</b> font is the font used throughout the whole website with Serif as the fallback. The Merriweather is a clean, modern looking font and is attractive. It is sourced from [Google fonts](https://fonts.google.com/specimen/Merriweather) and it's linked to CSS document via @import. 
+-   The <b>Merriweather</b> font is the font used throughout the whole website with Serif as the fallback. The Merriweather is a clean, modern looking font and is attractive. It is sourced from [Google fonts](https://fonts.google.com/specimen/Merriweather) and it's linked to CSS document via @import.
 
 
 ![Google fonts](docs/design_typography_merriweather.png)
 
 -   <b>Skyfall Done</b> is another font used in the project. It's style has been used in the graphics related to "Skyfall" Bond film and it's associated with recent films from the Bond series. It is sourced from [Cufonfonts.com](https://www.cufonfonts.com/font/skyfall-done) and it's served to the html document remotely from web server as The Web Open Font Format (WOFF) via @font-face CSS rule.
-The font is used on the quiz main screen (the header and the buttons) and also at the end of the quiz on score page and 404 page.   
+The font is used on the quiz main screen (the header and the buttons) and also at the end of the quiz on score page and 404 page.
 
 ![Skyfall Done](docs/design_typography_skyfall.png)
 
@@ -117,28 +117,27 @@ The font is used on the quiz main screen (the header and the buttons) and also a
 
 ### Wireframes - [View all wireframes - PDF file](https://github.com/alexkisielewicz/quiz-game/tree/main/docs/wireframes_pp2.pdf)
 
-Page is designed in very simple way. All pages display gun barell and the content is located in it's opening in the center of the screen. The content is changed dynamicaly by JavaScript manipulating DOM. 
+Page is designed in very simple way. All pages display gun barell and the content is located in it's opening in the center of the screen. The content is changed dynamicaly by JavaScript manipulating DOM.
 
-## Start screen 
+## Start screen
 
 One of the most recognizable and iconic elements of Bond films is gun barrel intro sequence. That kind of barrel was chosen to be a background for all pages throughout the application. The main content is presented in the center of the barrel opening which is also center of the viewport. The .png file has been used so the center of the barrel could be tranparent and show background that changes during the game depending on user actions.  
 
 ![Start screen](docs/features_start.png)
 
-Start screen presents to the user quiz logo and two buttons; RULES and START. User can learn easy to follow game rules after clicking on the RULES button. The game starts after clicking on START button. James Bond Theme Song starts to play in the background, the autoplay function is not used as it is not recommended by industry standards. 
+Start screen presents to the user quiz logo and two buttons; RULES and START. User can learn easy to follow game rules after clicking on the RULES button. The game starts after clicking on START button. James Bond Theme Song starts to play in the background, the autoplay function is not used as it is not recommended by industry standards.
 
 ![Rules](docs/features_rules.png)
 
 ## Controls
 
-Start screen buttons and logo become hidden and interface reveals informative controls section where user can track their progress and pause/play theme song.   
+Start screen buttons and logo become hidden and interface reveals informative controls section where user can track their progress and pause/play theme song.
 
 ![Controls](docs/features_controls.png)
 
-## Question 
+## Question
 
 Interface displays 10 randomly selected questions (from 20 available). Each question has 4 answer choices and only one is correct. The next question is automatically showed when user select the answer. 
-
 ![Question](docs/features_question.png)
 
 ## Visual and audio feedback for correct and incorrect answer
@@ -161,12 +160,10 @@ Score page is displayed automatically after user answers the last tenth question
 
 ![Footer](docs/features_endgame_2.png)
 
-
 ## HTTP 404 Page
-An error page is displayed in case that user tries to open a website that cannot be found on the web server. User doesn't have to use browser "go back" button, the link to the main page is provided. 
+An error page is displayed in case that user tries to open a website that cannot be found on the web server. User doesn't have to use browser "go back" button, the link to the main page is provided.
 
 ![404](docs/features_404.png)
-
 
 #   [Technology](#technology)
     
@@ -181,7 +178,7 @@ An error page is displayed in case that user tries to open a website that cannot
 
 - [Balsamiq](https://balsamiq.com/) - Balsamiq was used to create the [wireframes](#structure) during the design process.
 
-- [Coolors.co](https://coolors.co/) - was used to create color palette. 
+- [Coolors.co](https://coolors.co/) - was used to create colour palette.
 
 - [Google Fonts](https://fonts.google.com/specimen/Merriweather) - Google fonts were used to import the 'Merriweather' font into the style.css file which is used on all pages throughout the project.
 
@@ -191,11 +188,11 @@ An error page is displayed in case that user tries to open a website that cannot
 
 - [GitHub](https://github.com/) - GitHub is used to store the project's code after being pushed from Git.
 
-- [GitPod](https://www.gitpod.io) and [Visual Studio Code for Windows](https://code.visualstudio.com/) - IDE used to code the project. 
+- [GitPod](https://www.gitpod.io) and [Visual Studio Code for Windows](https://code.visualstudio.com/) - IDE used to code the project.
 
-- [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) - Photoshop was used to resize and crop the pictures. 
+- [Adobe Photoshop](https://www.adobe.com/ie/products/photoshop.html) - Photoshop was used to resize and crop the pictures.
 
-- [Audioeye.com](https://www.audioeye.com/color-contrast-checker) - used to analyse text/background contrast. 
+- [Audioeye.com](https://www.audioeye.com/color-contrast-checker) - used to analyse text/background contrast.
 
 - [TinyPNG](https://tinypng.com/) - used for png files compression.
 
@@ -203,108 +200,128 @@ An error page is displayed in case that user tries to open a website that cannot
 
 - [Free Formatter](https://www.freeformatter.com/) - used for formatting html and css documents for optimal readability.  
 
-- [Am I Responsive](https://ui.dev/amiresponsive) - online tool used to create mockup to present responsive design of this project. 
+- [Am I Responsive](https://ui.dev/amiresponsive) - online tool used to create mockup to present responsive design of this project.
 
-- [Lightshot](https://app.prntscr.com/) - Google Chrome extension used to capture screenshots for this README document. 
+- [Lightshot](https://app.prntscr.com/) - Google Chrome extension used to capture screenshots for this README document.
 
 - [Lighthouse](https://developers.google.com/web) - Google WebDev tool used for performance/accesibility testing.  
 
-- [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - used to test accessibility of the webpage. 
+- [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - used to test accessibility of the webpage.
 
-- [Favicon.io](https://www.favicon.io) - tool used to create favicon. 
-
-<br>
+- [Favicon.io](https://www.favicon.io) - tool used to create favicon.
 
 #    Testing
 
 ##   Accessibility
 
-Foreground and background color contrast check was done using [Audioeye.com](http://www.audioeye.com) online tool.
+Foreground and background colour contrast check was done using [Audioeye.com](http://www.audioeye.com) online tool.
 
-![Contrast 1](docs/testing_contrast.png) 
- 
+![Contrast 1](docs/testing_contrast.png)
 
-
-[WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool was used to check accessibility. It reported one error "Missing alternative text". It is related to carousel background photo linked via CSS stylesheet. Alternative text cannot be set in this case. Four alerts are minor and related to justified text in the paragraphs. 
+[WAVE](https://wave.webaim.org/) Web Accessibility Evaluation Tool was used to check accessibility. It reported one error "Missing h1 text". h1 tag is used as placeholder for play/pause button to control audio playback. The DOM is queried by JavaScript and it inserts font awesome in this place. It is marked as a warning in HTML validator, not an error.
 
 ![](docs/testing_wave.png)
 
 ##   Performance
 
- [Lighthouse](https://developers.google.com/web) - Google webdev tool used for performance testing. <br>
+ [Lighthouse](https://developers.google.com/web) - Google webdev tool used for performance testing showing near-maximum score.
 
 ![Lighthouse](docs/testing_performance_lighthouse.png)
 
-##   Validation
+## Validation
 
-###   HTML
+### HTML
 
-- [W3C Markup Validator](https://validator.w3.org/nu/) - validation service used. 
+- [W3C Markup Validator](https://validator.w3.org/nu/) - validation service used.
 
-:x: index.html - first result found 2 errors that refer to unclosed element and missing open element. <br>
-Three warnings refer to lack of heading in sections such as Gallery, YouTube video or Google Map and also recommend using h2-h6 headers instead of h1 used in Carousel caption.  
+:x: index.html - first test found 1 error that refer to attribute "alt" used with anchor element. The issue was fixed by changing this attribute to "title". One warning refer to empty heading. It was also found by WAVE accesibility tool - [click for description](#accessibility). Header is used as placeholder for font-awesome icon and manipulated by JavaScript.
 
-
-
-![Validator 404 page](docs/validator_html_404.png)
 ![Validator 404 page](docs/validator_html_index_1.png)
-![Validator 404 page](docs/validator_html_index_2.png)
-![Validator 404 page](docs/validator_html_404.png)
+
+:heavy_check_mark: index.html - after fixing above error.
+
+![Final test](docs/validator_html_index_2.png)
+
+Result for gameresult.html page :heavy_check_mark:
+
 ![Validator 404 page](docs/validator_html_score.png)
 
-
-:heavy_check_mark: index.html - after error fixes, final result: ![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Falexkisielewicz.github.io%2FPortfolio-Project-1%2F)
-
-![Final test](docs/validator_html_final.png)
-
 Result for 404.html page :heavy_check_mark:
-![404.html](docs/validator_404_thankyou.png) 
 
-Result for thankyou.html page :heavy_check_mark:
-![thankyou.html](docs/validator_html_thankyou.png) 
+![Validator 404 page](docs/validator_html_404.png)
 
-###   CSS
+### CSS
 
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)  - validation service used. 
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)  - validation service used.
 
-- [Custom stylesheet](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Falexkisielewicz.github.io%2FPortfolio-Project-1%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en-EN) -  No Error Found. :heavy_check_mark: 
-
+No Error Found. :heavy_check_mark:
 
 ![Validator CSS](docs/validator_css.png)
 
-
 ### JavaScript 
 
-![JSHint](docs/validator_jshint_1.png)
-![JSHint](docs/validator_jshint_2.png)
+- [JS Hint](https://jshint.com/) - validation service used.
+
+:heavy_check_mark: JS Hint didn't find any errors, there was one warning for the functions used in line 153. The issue was fixed by changing <i>window.location.href</i> property to <i>window.open()</i> method. Solution was found on [StackOverflow](https://stackoverflow.com/questions/7077770/window-location-href-and-window-open-methods-in-javascript).
+
+Screnshoot before fix:
+
+![JSHint](docs/testing_validator_jshint_1.png)
+
+Screnshoot after fix:
+
+![JSHint](docs/testing_validator_jshint_2.png)
+
+- Application was tested manually for bugs and errors during throught development process. All console.log messages have been removed before app release.
+
+![ManualTesting](docs/testing_1.png)
 
 ##   Browser compatibility
 
-Website was tested manually on following browsers: Google Chrome, Edge, Firefox, Safari, Brave. The results were satisfactory.   
+Website was tested manually on following browsers: Google Chrome, Edge, Firefox, Safari, Brave. The results were satisfactory on all browsers. 
 
-##   Platforms/devices 
+##   Platforms/devices
 
-Website was tested manually on Apple Iphone X, Apple iPad, Apple Macbook Air, Samsung Galaxy Tab S7+, Ultrawide display 3440x1440 and classic 16:9 2560x1440 display. The results were satisfactory.  
+Website was tested manually on Apple Iphone X, Apple iPad, Apple Macbook Air, Samsung Galaxy Tab S7+, Ultrawide display 3440x1440 and classic 16:9 2560x1440 display. The results were satisfactory and proved good responsiveness on all screen sizes.
 
-## Responsiveness 
+## Responsiveness
 
-I confirmed that this website is responsive and all the functions are displayed correctly and booking booking form work fine.   
+I confirmed that this website is responsive and all the functions are displayed correctly.
+
+![Responsiveness1](docs/testing_responsiveness_1.png)
+
+![Responsiveness2](docs/testing_responsiveness_2.png)
+
+## Peer review
+
+I asked my friends and CI coleagues to test the application and I received a lot of positive feedback, no issues were reported. Thanks to the feedback I implemented function that shows the correct answer when user chose wrong answer, I didn't plan to use this function at planning stage.
 
 ##   Bugs/known issues
 
-// Issues:
-// - choices stays selected on touch devices (can see it in DevTools too)
-// - max possible score is 9 instead of 10 
-// - no delay to see if the last 10th question was answered correctly
-// - clicking should be disabled after choice is clicked
+- <b>Issue #1:</b>  Hover state of the button stays active after button is clicked and dosn't come back to normal state. Issue is present only on touch devices. 
 
 ![Bug](docs/bugs_1.png)
+
+<b>Solution:</b> [StackOverflow](https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices)
+
+Pseudo-class .button:hover was replaced with CSS at rule below: 
+
+![Solution](docs/bugs_1_fix.png)
+
+- <b>Issue #2:</b> Answer buttons are not disabled for clicking after user select one answer. This lets user to click multiple times on other buttons before correct/incorrect feedback is displayed. 
+
 ![Bug](docs/bugs_2.png)
 
+<b>Solution: </b> My Mentor - Reuben Ferrante edited the code adding "if" statement (code in the file script.js starts at line 235) and using the loop function to go through all 4 buttons and check if they are clicked. Depends on their state the function adds or removes "disable" attribute (Code in the file script.js starts at line 214).
 
+- <b>Issue #3:</b> The last answer option button doesn't fit to the screen on small devices below 576px wide.
+
+![Bug](docs/bugs_3.png)
+
+<b>Solution:</b> padding of button element and margin of game container have been adjusted to fit the screen.
 
 #   Deployment
-    
+
 The project was deployed to GitHub Pages using the following steps:  
 
 1. Log in to GitHub and locate the [quiz-game](https://github.com/alexkisielewicz/quiz-game) repository. 
